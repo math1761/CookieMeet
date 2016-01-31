@@ -1,5 +1,5 @@
 <body>
-{% if is_granted("ROLE") %}
+{% if is_granted("ADMIN") %}
     <p>Hi {{ app.user.username }}</p>
 {% endif %}
 </body>

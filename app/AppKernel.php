@@ -20,6 +20,7 @@ class AppKernel extends Kernel
             new FOS\RestBundle\FOSRestBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle(),
             new BackyBack\CookieMeetBundle\BackyBackCookieMeetBundle(),
+            new BackyBack\MessengerBundle\BackyBackMessengerBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

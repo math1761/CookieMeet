@@ -1,4 +1,5 @@
 SymfoHetic
 ==========
 
-A Symfony project created on January 31, 2016, 6:13 pm.
+SymfoHetic is an API where grand mothers
+can meet and make cookies !

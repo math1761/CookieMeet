@@ -2,10 +2,24 @@ BackyBack\CookieMeetBundle\Entity\User:
     type: entity
     table: null
     repositoryClass: BackyBack\CookieMeetBundle\Repository\UserRepository
+    fields:
     id:
         id:
             type: integer
             id: true
             generator:
                 strategy: AUTO
+    name:
+        type: string
+        lenght: 255
+    firstname:
+        type: string
+        lenght: 255
+    address:
+        type: string
+        lenght: 255
     lifecycleCallbacks: {  }
+
+
+
+

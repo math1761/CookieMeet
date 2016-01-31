@@ -1,3 +1,7 @@
+backy_back_messenger:
+    resource: "@BackyBackMessengerBundle/Resources/config/routing.yml"
+    prefix:   /messenger
+
 backy_back_cookie_meet:
     resource: "@BackyBackCookieMeetBundle/Resources/config/routing.yml"
     prefix:   /

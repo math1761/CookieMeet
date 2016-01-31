@@ -67,8 +67,11 @@ swiftmailer:
     spool:     { type: memory }
 
 fos_user:
-    db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
+    db_driver: orm
     firewall_name: main
     user_class: BackyBack\CookieMeetBundle\Entity\User
+    registration:
+            form:
+                type: BackyBack\CookieMeetBundle\Form\RegistrationType
 
 nelmio_api_doc: ~
