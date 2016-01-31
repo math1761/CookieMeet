@@ -1,0 +1,10 @@
+backy_back_cookie_meet:
+    resource: "@BackyBackCookieMeetBundle/Resources/config/routing.yml"
+    prefix:   /
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+NelmioApiDocBundle:
+    resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
+    prefix:   /doc

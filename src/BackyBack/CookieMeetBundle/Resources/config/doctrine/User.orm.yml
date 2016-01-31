@@ -1,0 +1,11 @@
+BackyBack\CookieMeetBundle\Entity\User:
+    type: entity
+    table: null
+    repositoryClass: BackyBack\CookieMeetBundle\Repository\UserRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    lifecycleCallbacks: {  }

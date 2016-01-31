@@ -1,0 +1,5 @@
+<body>
+{% if is_granted("ROLE") %}
+    <p>Hi {{ app.user.username }}</p>
+{% endif %}
+</body>

@@ -1,0 +1,3 @@
+backy_back_cookie_meet_homepage:
+    path:     /
+    defaults: { _controller: BackyBackCookieMeetBundle:Main:index }
