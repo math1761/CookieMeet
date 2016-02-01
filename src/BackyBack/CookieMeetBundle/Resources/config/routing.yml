@@ -1,3 +1,12 @@
 backy_back_cookie_meet_homepage:
     path:     /
     defaults: { _controller: BackyBackCookieMeetBundle:Main:index }
+
+organisation:
+    type: rest
+    resource: BackyBack\CookieMeetBundle\Controller\OrganisationController
+
+user:
+    type: rest
+    parent: organisation
+    resource: BackyBack\CookieMeetBundle\Controller\UsersController

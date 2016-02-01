@@ -10,8 +10,6 @@ class RegistrationType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('name');
-        $builder->add('address');
-        $builder->add('firstname');
     }
 
     public function getParent()
@@ -25,14 +23,6 @@ class RegistrationType extends AbstractType
     }
 
     public function getName()
-    {
-        return $this->getBlockPrefix();
-    }
-    public function getFistname()
-    {
-        return $this->getBlockPrefix();
-    }
-    public function getAddress()
     {
         return $this->getBlockPrefix();
     }
