@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new Nelmio\ApiDocBundle\NelmioApiDocBundle(),
             new FOS\RestBundle\FOSRestBundle(),
             //new FOS\OAuthServerBundle\FOSOAuthServerBundle(),
+            new Ivory\GoogleMapBundle\IvoryGoogleMapBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle(),
             new BackyBack\CookieMeetBundle\BackyBackCookieMeetBundle(),
             new BackyBack\MessengerBundle\BackyBackMessengerBundle(),

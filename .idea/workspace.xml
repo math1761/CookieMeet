@@ -2,117 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d9d5246-7ede-464e-bba2-a148e6b0284d" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/.travis.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Admin/FieldDescription.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Block/AuditBlockService.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Builder/DatagridBuilder.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Builder/FormContractor.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Builder/ListBuilder.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Builder/ShowBuilder.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/CHANGELOG.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/CONTRIBUTING.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Datagrid/Pager.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Datagrid/ProxyQuery.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/DependencyInjection/Compiler/AddAuditEntityCompilerPass.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/DependencyInjection/Compiler/AddGuesserCompilerPass.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/DependencyInjection/Compiler/AddTemplatesCompilerPass.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/DependencyInjection/Configuration.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/DependencyInjection/SonataDoctrineORMAdminExtension.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Filter/AbstractDateFilter.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Filter/BooleanFilter.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Filter/CallbackFilter.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Filter/ChoiceFilter.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Filter/ClassFilter.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Filter/DateFilter.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Filter/DateRangeFilter.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Filter/DateTimeFilter.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Filter/DateTimeRangeFilter.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Filter/Filter.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Filter/ModelFilter.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Filter/NumberFilter.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Filter/StringFilter.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Filter/TimeFilter.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Guesser/AbstractTypeGuesser.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Guesser/FilterTypeGuesser.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Guesser/TypeGuesser.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Makefile" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Model/AuditReader.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Model/ModelManager.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Resources/config/audit.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Resources/config/doctrine_orm.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Resources/config/doctrine_orm_filter_types.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Resources/config/security.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Resources/doc/Makefile" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Resources/doc/_static/.gitkeep" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Resources/doc/conf.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Resources/doc/images/sonata_type_immutable_array.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Resources/doc/index.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Resources/doc/reference/audit.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Resources/doc/reference/configuration.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Resources/doc/reference/filter_field_definition.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Resources/doc/reference/form_field_definition.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Resources/doc/reference/form_types_and_transformers.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Resources/doc/reference/installation.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Resources/doc/reference/list_field_definition.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Resources/doc/reference/query_proxy.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Resources/doc/reference/templates.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Resources/doc/reference/troubleshootings.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Resources/doc/requirements.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Resources/doc/tutorial/creating_your_first_admin_class/defining_admin_class.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Resources/doc/tutorial/creating_your_first_admin_class/defining_crud_controller.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Resources/doc/tutorial/creating_your_first_admin_class/defining_entities.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Resources/doc/tutorial/creating_your_first_admin_class/defining_routing.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Resources/doc/tutorial/creating_your_first_admin_class/introduction.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Resources/meta/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Resources/views/Block/block_audit.html.twig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Resources/views/CRUD/edit_modal.html.twig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Resources/views/CRUD/edit_orm_many_association_script.html.twig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Resources/views/CRUD/edit_orm_many_to_many.html.twig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Resources/views/CRUD/edit_orm_many_to_one.html.twig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Resources/views/CRUD/edit_orm_one_association_script.html.twig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Resources/views/CRUD/edit_orm_one_to_many.html.twig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Resources/views/CRUD/edit_orm_one_to_one.html.twig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Resources/views/CRUD/list_orm_many_to_many.html.twig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Resources/views/CRUD/list_orm_many_to_one.html.twig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Resources/views/CRUD/list_orm_one_to_many.html.twig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Resources/views/CRUD/list_orm_one_to_one.html.twig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Resources/views/CRUD/show_orm_many_to_many.html.twig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Resources/views/CRUD/show_orm_many_to_one.html.twig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Resources/views/CRUD/show_orm_one_to_many.html.twig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Resources/views/CRUD/show_orm_one_to_one.html.twig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Resources/views/Form/filter_admin_fields.html.twig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Resources/views/Form/form_admin_fields.html.twig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/SonataDoctrineORMAdminBundle.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Tests/Admin/FieldDescriptionTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Tests/DependencyInjection/Compiler/AddAuditEntityCompilerPassTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Tests/DependencyInjection/Compiler/AddTemplatesCompilerPassTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Tests/Filter/BooleanFilterTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Tests/Filter/CallbackFilterTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Tests/Filter/ChoiceFilterTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Tests/Filter/ClassFilterTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Tests/Filter/FilterTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Tests/Filter/ModelFilterTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Tests/Filter/NumberFilterTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Tests/Filter/QueryBuilder.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Tests/Filter/StringFilterTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Tests/Model/ModelManagerTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Tests/tests/autoload.php.dist" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Tests/tests/bootstrap.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/Util/ObjectAclManipulator.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/build.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/composer.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle/phpunit.xml.dist" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/BackyBack/CookieMeetBundle/Entity/User.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/BackyBack/CookieMeetBundle/Repository/UserRepository.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/BackyBack/CookieMeetBundle/Resources/config/doctrine/User.orm.yml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/AppKernel.php" afterPath="$PROJECT_DIR$/app/AppKernel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/services.yml" afterPath="$PROJECT_DIR$/app/config/services.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BackyBack/CookieMeetBundle/Entity/User.php" afterPath="$PROJECT_DIR$/src/BackyBack/CookieMeetBundle/Entity/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BackyBack/CookieMeetBundle/Form/RegistrationType.php" afterPath="$PROJECT_DIR$/src/BackyBack/CookieMeetBundle/Form/RegistrationType.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BackyBack/CookieMeetBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/BackyBack/CookieMeetBundle/Resources/config/routing.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/installed.json" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" />
     </list>
@@ -164,24 +63,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="composer.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/composer.json">
+      <file leaf-file-name="MainController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/BackyBack/CookieMeetBundle/Controller/MainController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.529411">
-              <caret line="29" column="49" selection-start-line="29" selection-start-column="49" selection-end-line="29" selection-end-column="49" />
+            <state vertical-scroll-proportion="-3.75">
+              <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/BackyBack/CookieMeetBundle/Entity/User.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.75">
-              <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-              <folding>
-                <element signature="e#52#94#0#PHP" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -199,8 +86,8 @@
       <file leaf-file-name="Client.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BackyBack/CookieMeetBundle/Entity/Client.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.625">
-              <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
+            <state vertical-scroll-proportion="-8.75">
+              <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
               <folding>
                 <element signature="e#53#107#0#PHP" expanded="true" />
               </folding>
@@ -212,20 +99,28 @@
         <entry file="file://$PROJECT_DIR$/src/BackyBack/CookieMeetBundle/Resources/config/routing.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="57" selection-start-line="11" selection-start-column="57" selection-end-line="11" selection-end-column="57" />
+              <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AccessToken.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/BackyBack/CookieMeetBundle/Entity/AccessToken.php">
+      <file leaf-file-name="services.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/BackyBack/CookieMeetBundle/Resources/config/services.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.875">
-              <caret line="27" column="36" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="63" />
-              <folding>
-                <element signature="e#54#118#0#PHP" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.0">
+              <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RegistrationType.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/BackyBack/CookieMeetBundle/Form/RegistrationType.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="1.0290238">
+              <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -242,24 +137,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AuthCode.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AuthCode.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BackyBack/CookieMeetBundle/Entity/AuthCode.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.71276593">
+            <state vertical-scroll-proportion="-13.958333">
               <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
               <folding>
                 <element signature="e#53#111#0#PHP" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserRepository.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/BackyBack/CookieMeetBundle/Repository/UserRepository.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -299,16 +184,16 @@
         <option value="$PROJECT_DIR$/src/BackyBack/CookieMeetBundle/Form/RegistrationType.php" />
         <option value="$PROJECT_DIR$/app/config/services.yml" />
         <option value="$PROJECT_DIR$/src/BackyBack/CookieMeetBundle/Controller/UsersController.php" />
-        <option value="$PROJECT_DIR$/src/BackyBack/CookieMeetBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/app/config/routing.yml" />
         <option value="$PROJECT_DIR$/app/config/config.yml" />
         <option value="$PROJECT_DIR$/src/BackyBack/CookieMeetBundle/Entity/User.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/src/BackyBack/CookieMeetBundle/Entity/Client.php" />
-        <option value="$PROJECT_DIR$/app/AppKernel.php" />
         <option value="$PROJECT_DIR$/src/BackyBack/CookieMeetBundle/Entity/AccessToken.php" />
         <option value="$PROJECT_DIR$/src/BackyBack/CookieMeetBundle/Entity/RefreshToken.php" />
         <option value="$PROJECT_DIR$/src/BackyBack/CookieMeetBundle/Entity/AuthCode.php" />
+        <option value="$PROJECT_DIR$/app/AppKernel.php" />
+        <option value="$PROJECT_DIR$/src/BackyBack/CookieMeetBundle/Resources/config/routing.yml" />
       </list>
     </option>
   </component>
@@ -476,71 +361,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SymfoHetic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SymfoHetic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BackyBack" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CookieMeetBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SymfoHetic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SymfoHetic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BackyBack" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CookieMeetBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="doctrine" />
+              <option name="myItemId" value="Form" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -593,38 +414,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SymfoHetic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SymfoHetic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SymfoHetic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SymfoHetic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -762,23 +551,29 @@
       <option name="project" value="LOCAL" />
       <updated>1454278399963</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Auth Token added, Uber algorithm removed">
+      <created>1454332890579</created>
+      <option name="number" value="00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1454332890579</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="810" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21959943" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21959943" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32867134" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17739628" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32867134" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.275" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39972144" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32867134" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -811,7 +606,8 @@
     <MESSAGE value="FOSUser is configured !" />
     <MESSAGE value="Users informations sended in Json" />
     <MESSAGE value="Messenger Bundle created" />
-    <option name="LAST_COMMIT_MESSAGE" value="Messenger Bundle created" />
+    <MESSAGE value="Auth Token added, Uber algorithm removed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Auth Token added, Uber algorithm removed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -833,16 +629,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BackyBack/CookieMeetBundle/Entity/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-          <folding>
-            <element signature="e#52#94#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -995,13 +781,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.20654045">
           <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BackyBack/CookieMeetBundle/Resources/config/doctrine/User.orm.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30769232">
-          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1016,6 +796,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.040983606">
           <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1053,39 +834,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.28688523">
           <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BackyBack/CookieMeetBundle/Controller/MainController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.75">
-          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BackyBack/CookieMeetBundle/Resources/config/services.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BackyBack/CookieMeetBundle/Form/RegistrationType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
-          <folding>
-            <element signature="e#51#91#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BackyBack/CookieMeetBundle/Repository/UserRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1093,33 +841,7 @@
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.529411">
-          <caret line="29" column="49" selection-start-line="29" selection-start-column="49" selection-end-line="29" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BackyBack/CookieMeetBundle/Entity/Client.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.625">
-          <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
-          <folding>
-            <element signature="e#53#107#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.7916665">
-          <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BackyBack/CookieMeetBundle/Resources/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="57" selection-start-line="11" selection-start-column="57" selection-end-line="11" selection-end-column="57" />
+          <caret line="33" column="6" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
           <folding />
         </state>
       </provider>
@@ -1152,23 +874,63 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BackyBack/CookieMeetBundle/Entity/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.75">
-          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-          <folding>
-            <element signature="e#52#94#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/BackyBack/CookieMeetBundle/Entity/AuthCode.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.71276593">
+        <state vertical-scroll-proportion="-13.958333">
           <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
           <folding>
             <element signature="e#53#111#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BackyBack/CookieMeetBundle/Entity/Client.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.75">
+          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+          <folding>
+            <element signature="e#53#107#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.7916665">
+          <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BackyBack/CookieMeetBundle/Controller/MainController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.75">
+          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BackyBack/CookieMeetBundle/Resources/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BackyBack/CookieMeetBundle/Resources/config/services.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BackyBack/CookieMeetBundle/Form/RegistrationType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0290238">
+          <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>

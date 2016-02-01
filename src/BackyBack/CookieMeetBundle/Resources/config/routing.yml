@@ -4,7 +4,7 @@ backy_back_cookie_meet_homepage:
 
 organisation:
     type: rest
-    resource: BackyBack\CookieMeetBundle\Controller\OrganisationController
+    resource: BackyBack\CookieMeetBundle\Controller\MainController
 
 user:
     type: rest
