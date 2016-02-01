@@ -20,6 +20,7 @@ class AppKernel extends Kernel
             new FOS\OAuthServerBundle\FOSOAuthServerBundle(),
             new Gos\Bundle\WebSocketBundle\GosWebSocketBundle(),
             new Gos\Bundle\PubSubRouterBundle\GosPubSubRouterBundle(),
+            new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle(),
             new Nelmio\ApiDocBundle\NelmioApiDocBundle(),
             new BackyBack\CookieMeetBundle\BackyBackCookieMeetBundle(),

@@ -94,3 +94,9 @@ gos_web_socket:
     server:
         port: 8080        #The port the socket server will listen on
         host: 127.0.0.1   #The host ip to bind to
+
+assetic:
+    debug:          '%kernel.debug%'
+    use_controller: '%kernel.debug%'
+    filters:
+        cssrewrite: ~
