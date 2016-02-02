@@ -77,18 +77,11 @@ fos_rest:
 
 fos_user:
     db_driver: orm
-    firewall_name: api
+    firewall_name: main
     user_class: BackyBack\CookieMeetBundle\Entity\User
-
-
-fos_oauth_server:
-    db_driver:           orm
-    client_class:        BackyBack\CookieMeetBundle\Entity\Client
-    access_token_class:  BackyBack\CookieMeetBundle\Entity\AccessToken
-    refresh_token_class: BackyBack\CookieMeetBundle\Entity\RefreshToken
-    auth_code_class:     BackyBack\CookieMeetBundle\Entity\AuthCode
-    service:
-        user_provider: fos_user.user_manager
+    registration:
+            form:
+                type: BackyBack\CookieMeetBundle\Form\RegistrationType
 
 gos_web_socket:
     server:
@@ -96,7 +89,11 @@ gos_web_socket:
         host: 127.0.0.1   #The host ip to bind to
 
 assetic:
+    bundles: [ BackyBackCookieMeetBundle ]
     debug:          '%kernel.debug%'
     use_controller: '%kernel.debug%'
     filters:
         cssrewrite: ~
+
+vich_uploader:
+    db_driver: orm

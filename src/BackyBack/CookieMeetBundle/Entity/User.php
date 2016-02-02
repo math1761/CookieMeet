@@ -4,6 +4,7 @@ namespace BackyBack\CookieMeetBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use FOS\UserBundle\Model\User as BaseUser;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * User
@@ -23,13 +24,20 @@ class User extends BaseUser
     public function __construct()
     {
         parent::__construct();
-        // your own logic
     }
 
     /**
      * @var string
      *
      * @ORM\Column(name="firstname", type="string", length=255, nullable=true)
+     * @Assert\NotBlank(message="Please enter your firstname.", groups={"Registration", "Profile"})
+     * @Assert\Length(
+     *     min=3,
+     *     max=255,
+     *     minMessage="The firstname is too short.",
+     *     maxMessage="The firstname is too long.",
+     *     groups={"Registration", "Profile"}
+     * )
      */
     private $firstname;
 
@@ -37,6 +45,14 @@ class User extends BaseUser
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255, nullable=true)
+     * @Assert\NotBlank(message="Please enter your name.", groups={"Registration", "Profile"})
+     * @Assert\Length(
+     *     min=3,
+     *     max=255,
+     *     minMessage="The name is too short.",
+     *     maxMessage="The name is too long.",
+     *     groups={"Registration", "Profile"}
+     * )
      */
     private $name;
 
@@ -44,6 +60,14 @@ class User extends BaseUser
      * @var string
      *
      * @ORM\Column(name="address", type="string", length=255, nullable=true)
+     * @Assert\NotBlank(message="Please enter your address.", groups={"Registration", "Profile"})
+     * @Assert\Length(
+     *     min=3,
+     *     max=255,
+     *     minMessage="Your address is too short.",
+     *     maxMessage="Your address is too long.",
+     *     groups={"Registration", "Profile"}
+     * )
      */
     private $address;
 

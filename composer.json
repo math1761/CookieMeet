@@ -26,10 +26,13 @@
         "friendsofsymfony/rest-bundle": "^1.7",
         "jms/serializer-bundle": "^1.1",
         "nelmio/api-doc-bundle": "^2.11",
-        "friendsofsymfony/oauth-server-bundle": "^1.5",
         "egeloen/google-map-bundle": "^2.2",
         "willdurand/geocoder": "^3.3",
-        "gos/web-socket-bundle": "^1.6"
+        "gos/web-socket-bundle": "^1.6",
+        "vich/uploader-bundle": "^0.14.0",
+        "genemu/form-bundle": "^2.2",
+        "php-http/httplug": "^1.0",
+        "guzzle/guzzle": "^3.9"
     },
     "require-dev": {
         "sensio/generator-bundle": "~3.0",

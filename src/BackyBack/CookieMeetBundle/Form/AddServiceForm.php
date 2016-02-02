@@ -6,7 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class Connexion extends AbstractType
+class AddServiceForm extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -15,10 +15,11 @@ class Connexion extends AbstractType
 
     public function configureOptions(OptionsResolver $resolver)
     {
+
     }
 
     public function getName()
     {
-        return 'backy_back_cookie_meet_bundle_connexion';
+        return 'backy_back_cookie_meet_bundle_add_service_form';
     }
 }
