@@ -9,3 +9,7 @@ backy_back_cookie_meet_addservice:
 backy_back_cookie_meet_map:
     path:     /map
     defaults: { _controller: BackyBackCookieMeetBundle:Map:AddMap }
+
+backy_back_cookie_meet_messenger:
+    path:     /messenger
+    defaults: { _controller: BackyBackCookieMeetBundle:Messenger:messenger }
