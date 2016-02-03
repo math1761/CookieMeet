@@ -3,5 +3,6 @@ backy_back_cookie_meet_homepage:
     defaults: { _controller: BackyBackCookieMeetBundle:Default:index }
 
 backy_back_cookie_meet_admin:
+    path:    /addservice
     type: rest
-    resource: BackyBack\CookieMeetBundle\Controller\AdminController
+    resource: BackyBack\CookieMeetBundle\Controller\AddServiceController
