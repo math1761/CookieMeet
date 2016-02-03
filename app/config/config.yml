@@ -83,11 +83,6 @@ fos_user:
             form:
                 type: BackyBack\CookieMeetBundle\Form\RegistrationType
 
-gos_web_socket:
-    server:
-        port: 8080        #The port the socket server will listen on
-        host: 127.0.0.1   #The host ip to bind to
-
 assetic:
     bundles: [ BackyBackCookieMeetBundle ]
     debug:          '%kernel.debug%'

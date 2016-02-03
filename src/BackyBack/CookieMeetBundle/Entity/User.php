@@ -71,6 +71,28 @@ class User extends BaseUser
      */
     private $address;
 
+    /**
+     * @var
+     *
+     * @ORM\Column(name="zip_code", type="string", length=255, nullable=true)
+     * @Assert\NotBlank(message="Enter your Zipcode", groups={"Registration", "Profile"})
+     * @Assert\Length(
+     *     min=5,
+     *     max=5,
+     *     minMessage="Invalid Zipcode",
+     *     maxMessage="Invalid Zipcode",
+     *     groups={"Registration", "Profile"}
+     * )
+     */
+    private $zipCode;
+
+    /**
+     * @var
+     *
+     * @ORM\Column(name="city", type="string", length=255, nullable=true)
+     */
+    protected $city;
+
 
     /**
      * Get id

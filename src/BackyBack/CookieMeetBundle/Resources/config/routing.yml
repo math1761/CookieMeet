@@ -1,8 +1,11 @@
 backy_back_cookie_meet_homepage:
     path:     /
-    defaults: { _controller: BackyBackCookieMeetBundle:Default:index }
+    defaults: { _controller: BackyBackCookieMeetBundle:Index:index }
 
-backy_back_cookie_meet_admin:
-    path:    /addservice
-    type: rest
-    resource: BackyBack\CookieMeetBundle\Controller\AddServiceController
+backy_back_cookie_meet_addservice:
+    path:     /addservice
+    defaults: { _controller: BackyBackCookieMeetBundle:AddService:AddService }
+
+backy_back_cookie_meet_map:
+    path:     /map
+    defaults: { _controller: BackyBackCookieMeetBundle:Map:AddMap }

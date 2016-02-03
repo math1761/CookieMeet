@@ -4,10 +4,10 @@ namespace BackyBack\CookieMeetBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class DefaultController extends Controller
+class IndexController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('BackyBackCookieMeetBundle:Default:index.html.twig');
+        return $this->render('BackyBackCookieMeetBundle:Index:index.html.twig');
     }
 }

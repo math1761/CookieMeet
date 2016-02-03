@@ -3,11 +3,16 @@
 namespace BackyBack\CookieMeetBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use BackyBack\CookieMeetBundle\Form\AddServiceForm;
 
-class DefaultController extends Controller
+class AddServiceController extends Controller
 {
-    public function indexAction()
+    public function AddServiceAction()
     {
-        return $this->render('BackyBackCookieMeetBundle:Default:index.html.twig');
+        return $this->render('BackyBackCookieMeetBundle:AddService:addme.html.twig');
+    }
+
+    public function AddServiceFormAction($form) {
+        return $form = $this->createForm(AddServiceForm::class);
     }
 }
