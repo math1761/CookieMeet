@@ -46,12 +46,8 @@ doctrine:
         user:     "root"
         password: "root"
         charset:  UTF8
-        # if using pdo_sqlite as your database driver:
-        #   1. add the path in parameters.yml
-        #     e.g. database_path: "%kernel.root_dir%/data/data.db3"
-        #   2. Uncomment database_path in parameters.yml.dist
-        #   3. Uncomment next line:
-        #     path:     "%database_path%"
+        types:
+            json: Sonata\Doctrine\Types\JsonType
 
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
@@ -79,9 +75,6 @@ fos_user:
     db_driver: orm
     firewall_name: main
     user_class: BackyBack\CookieMeetBundle\Entity\User
-    registration:
-            form:
-                type: BackyBack\CookieMeetBundle\Form\RegistrationType
 
 assetic:
     bundles: [ BackyBackCookieMeetBundle ]
