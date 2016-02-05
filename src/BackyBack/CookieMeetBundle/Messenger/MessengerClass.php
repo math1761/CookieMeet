@@ -9,33 +9,34 @@
 
 namespace BackyBack\CookieMeetBundle\Messenger;
 
-use BackyBack\CookieMeetBundle\Controller\MessengerController;
-use Hoa\Exception\Exception;
+use BackyBack\CookieMeetBundle\Controller\MessengerController as Message;
+use Hoa\Socket\Server as ServSocket;
+use Hoa\Websocket\Server as ServWebSocket;
 
-class MessengerClass extends MessengerController
+
+class MessengerClass extends Message
 {
-    private $username;
-    private $message;
-    private $list;
-    private $send;
+    private $server;
 
-    /**
-     * @return mixed
-     */
-    public function getUsername($username)
+    public function __construct()
     {
-        return var_dump($this->username);
+        $this->server = serverlaunchAction();
     }
 
     /**
-     * @param mixed $name
+     * Function starts websocket server
+     * @return $server
      */
-    public function setUsername($username)
+    protected function serverlaunchAction($server)
     {
-        if ($name <= 30) {
-            $this->name = $name;
-        }
-        else
-            throw new Exception('Nom trop grand');
+        $server = new ServWebSocket(
+            new ServSocket('tcp://127.0.0.1:8889')
+        );
+        return $this->server;
     }
+
+    /*protected function serverlistenAction() {
+        $this->$server
+        $this->serverlaunchAction($server);
+    }*/
 }
