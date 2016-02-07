@@ -14,8 +14,8 @@ class AddServiceForm extends AbstractType
     {
         $builder
             ->add('plateName')
-            ->add('plateCategory', ChoiceType::class, array('
-            choices' => array(
+            ->add('plateCategory', ChoiceType::class, array(
+                'choices' => array(
                 'Type de cuisine' => null,
                 'Spécialités Française' => true,
                 'Pizza' => true,
@@ -30,9 +30,9 @@ class AddServiceForm extends AbstractType
             ),
             'choices_as_values' => true,
             ))
-            ->add('platePrice')
-            ->add('plateExcerpt', TextareaType::class, array('
-            attr' => array('class' => 'myTextarea'),
+            ->add('platePrice', 'genemu_jqueryrating')
+            ->add('plateExcerpt', TextareaType::class,
+                array('attr' => array('class' => 'myTextarea'),
             'required' => false))
             ->add('save', SubmitType::class);
     }

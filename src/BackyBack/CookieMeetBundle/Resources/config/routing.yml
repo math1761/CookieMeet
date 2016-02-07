@@ -1,6 +1,10 @@
 backy_back_cookie_meet_homepage:
     path:     /
-    defaults: { _controller: BackyBackCookieMeetBundle:Index:index }
+    defaults: { _controller: BackyBackCookieMeetBundle:Index:homepage }
+
+backy_back_cookie_meet_users:
+    path:     /users
+    defaults: { _controller: BackyBackCookieMeetBundle:Index:users }
 
 backy_back_cookie_meet_addservice:
     path:     /addservice

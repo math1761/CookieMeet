@@ -85,3 +85,14 @@ assetic:
 
 vich_uploader:
     db_driver: orm
+
+fos_rest:
+    param_fetcher_listener: true
+    body_listener: true
+    format_listener:
+        enabled: true
+        rules:
+            - { path: '^/', priorities: ['json', 'xml'], fallback_format: 'json' }
+    versioning: true
+    view:
+        view_response_listener: 'force'

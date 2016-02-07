@@ -20,6 +20,7 @@ class AppKernel extends Kernel
             new Vich\UploaderBundle\VichUploaderBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle(),
+            new JeroenDesloovere\Bundle\GeolocationBundle\JeroenDesloovereGeolocationBundle(),
             new Nelmio\ApiDocBundle\NelmioApiDocBundle(),
             new Genemu\Bundle\FormBundle\GenemuFormBundle(),
             new BackyBack\CookieMeetBundle\BackyBackCookieMeetBundle(),

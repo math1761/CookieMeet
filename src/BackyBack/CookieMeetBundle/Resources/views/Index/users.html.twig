@@ -1,0 +1,4 @@
+<h1>get all users</h1>
+{% for user in users %}
+    <li>{{ user.username|e }}</li>
+{% endfor %}

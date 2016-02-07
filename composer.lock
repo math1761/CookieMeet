@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "553432679e4829d9d73df5cae3172cb1",
-    "content-hash": "4d4cd8ffbc5251c2b88fa657ff57593b",
+    "hash": "7c7899bad322c04a5dd473f153fb11d5",
+    "content-hash": "86181ce91bd86d059426f5505283a9df",
     "packages": [
         {
             "name": "cocur/slugify",
@@ -69,6 +69,215 @@
                 "slugify"
             ],
             "time": "2015-09-29 18:26:32"
+        },
+        {
+            "name": "contao-community-alliance/composer-plugin",
+            "version": "2.3.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/contao-community-alliance/composer-plugin.git",
+                "reference": "346f5a421e272897e47bcc45f2c92077352df33c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/contao-community-alliance/composer-plugin/zipball/346f5a421e272897e47bcc45f2c92077352df33c",
+                "reference": "346f5a421e272897e47bcc45f2c92077352df33c",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0",
+                "php": ">=5.3.2"
+            },
+            "conflict": {
+                "contao-community-alliance/composer": "<0.9-dev",
+                "contao/core": "3.0.*"
+            },
+            "replace": {
+                "contao-community-alliance/composer-installer": "1.7.1"
+            },
+            "require-dev": {
+                "composer/composer": "~1.0@dev",
+                "contao/core": ">=2.11,<4.0",
+                "phpcq/all-tasks": "~1.0"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "ContaoCommunityAlliance\\Composer\\Plugin\\Plugin",
+                "branch-alias": {
+                    "dev-master": "2.3.x-dev",
+                    "dev-develop": "2.4.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "ContaoCommunityAlliance\\Composer\\Plugin": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0+"
+            ],
+            "description": "Composer plugin that provide contao integration and installer.",
+            "homepage": "http://c-c-a.org/",
+            "time": "2015-10-28 11:38:10"
+        },
+        {
+            "name": "contao-components/compass",
+            "version": "0.12.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/contao-components/compass.git",
+                "reference": "a174266fa89c3c808a9c2c090bf64693dec237f2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/contao-components/compass/zipball/a174266fa89c3c808a9c2c090bf64693dec237f2",
+                "reference": "a174266fa89c3c808a9c2c090bf64693dec237f2",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Leo Feyer",
+                    "homepage": "https://github.com/leofeyer"
+                }
+            ],
+            "description": "Compass integration for Contao Open Source CMS",
+            "time": "2014-11-18 08:30:16"
+        },
+        {
+            "name": "contao/core",
+            "version": "3.5.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/contao-community-alliance/composerized-contao-core.git",
+                "reference": "7d7a730ee4d4ee72cdb665eeed1744c2cfbb8645"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/contao-community-alliance/composerized-contao-core/zipball/7d7a730ee4d4ee72cdb665eeed1744c2cfbb8645",
+                "reference": "7d7a730ee4d4ee72cdb665eeed1744c2cfbb8645",
+                "shasum": ""
+            },
+            "require": {
+                "contao-community-alliance/composer-plugin": "~2.0",
+                "contao-components/compass": "~0.12",
+                "leafo/scssphp": "~0.1",
+                "michelf/php-markdown": "~1.4",
+                "oyejorge/less.php": "~1.7",
+                "php": ">=5.4.0",
+                "phpspec/php-diff": "~1.0",
+                "simplepie/simplepie": "~1.3",
+                "swiftmailer/swiftmailer": "~5.2",
+                "tecnick.com/tcpdf": "~6.0",
+                "true/punycode": "~1.0"
+            },
+            "replace": {
+                "contao/calendar-bundle": "self.version",
+                "contao/comments-bundle": "self.version",
+                "contao/core-bundle": "self.version",
+                "contao/faq-bundle": "self.version",
+                "contao/listing-bundle": "self.version",
+                "contao/news-bundle": "self.version",
+                "contao/newsletter-bundle": "self.version"
+            },
+            "type": "project",
+            "autoload": {
+                "classmap": [
+                    "system/modules",
+                    "system/helper/interface.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Leo Feyer",
+                    "homepage": "https://github.com/leofeyer"
+                }
+            ],
+            "description": "Contao Open Source CMS",
+            "homepage": "https://contao.org",
+            "keywords": [
+                "contao",
+                "core"
+            ],
+            "time": "2015-12-07 22:13:42"
+        },
+        {
+            "name": "discordier/httprequestextended",
+            "version": "1.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/unmaintained-stuff/httprequestextended.git",
+                "reference": "cdd7b9e38431183f298f40b13934b514b3710b45"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/unmaintained-stuff/httprequestextended/zipball/cdd7b9e38431183f298f40b13934b514b3710b45",
+                "reference": "cdd7b9e38431183f298f40b13934b514b3710b45",
+                "shasum": ""
+            },
+            "require": {
+                "contao/core": ">=2.11,<4.0",
+                "php": ">=5.3"
+            },
+            "conflict": {
+                "contao/core": "3.0.*"
+            },
+            "replace": {
+                "contao-legacy/httprequestextended": "*"
+            },
+            "require-dev": {
+                "contao/core": "dev-master"
+            },
+            "type": "contao-module",
+            "extra": {
+                "contao": {
+                    "symlinks": {
+                        "system/modules/httprequestextended": "system/modules/httprequestextended"
+                    }
+                },
+                "branch-alias": {
+                    "dev-master": "1.1.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "system"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Christian Schiffler",
+                    "email": "c.schiffler@cyberspectrum.de",
+                    "homepage": "http://www.cyberspectrum.de",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Stefan Heimes",
+                    "email": "stefan_heimes@hotmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "fsockopen based HTTP client for Contao",
+            "keywords": [
+                "contao",
+                "http",
+                "php"
+            ],
+            "abandoned": "guzzlehttp/guzzle",
+            "time": "2014-06-11 23:30:25"
         },
         {
             "name": "doctrine/annotations",
@@ -1172,7 +1381,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/8f1fc2273b37c61ddcc1620abf4500320a23763e",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/140cc28026304d3023c880f441689986f99b913b",
                 "reference": "8f1fc2273b37c61ddcc1620abf4500320a23763e",
                 "shasum": ""
             },
@@ -2072,6 +2281,106 @@
             "time": "2014-01-12 16:20:24"
         },
         {
+            "name": "jeroendesloovere/geolocation-bundle",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jeroendesloovere/geolocation-bundle.git",
+                "reference": "5e5215471b968e1f69baeb5a7dfed17eec1f2807"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jeroendesloovere/geolocation-bundle/zipball/5e5215471b968e1f69baeb5a7dfed17eec1f2807",
+                "reference": "5e5215471b968e1f69baeb5a7dfed17eec1f2807",
+                "shasum": ""
+            },
+            "require": {
+                "jeroendesloovere/geolocation-php-api": "1.2.*",
+                "php": ">=5.3.3",
+                "symfony/http-kernel": "~2.3"
+            },
+            "require-dev": {
+                "symfony/framework-bundle": "~2.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "JeroenDesloovere\\Bundle\\GeolocationBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jeroen Desloovere",
+                    "email": "info@jeroendesloovere.be",
+                    "homepage": "http://jeroendesloovere.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "This Geolocation Symony2 Bundle uses the geolocation-php-api class which finds latitude/longitude from an address or reverse using Google Maps API.",
+            "homepage": "https://github.com/jeroendesloovere/geolocation-bundle",
+            "keywords": [
+                "Symfony2",
+                "address",
+                "api",
+                "bundle",
+                "geolocation",
+                "latitude",
+                "longitude",
+                "php"
+            ],
+            "time": "2015-06-09 08:28:11"
+        },
+        {
+            "name": "jeroendesloovere/geolocation-php-api",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jeroendesloovere/geolocation-php-api.git",
+                "reference": "7600ad0f05b67bec783a055eb40fb850b0deb080"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jeroendesloovere/geolocation-php-api/zipball/7600ad0f05b67bec783a055eb40fb850b0deb080",
+                "reference": "7600ad0f05b67bec783a055eb40fb850b0deb080",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "JeroenDesloovere\\Geolocation\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jeroen Desloovere",
+                    "email": "info@jeroendesloovere.be",
+                    "homepage": "http://jeroendesloovere.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "This Geolocation PHP class connects to Google Maps API to find latitude/longitude or address.",
+            "homepage": "https://github.com/jeroendesloovere/geolocation-php-api",
+            "keywords": [
+                "api",
+                "geolocation",
+                "google",
+                "maps",
+                "php"
+            ],
+            "time": "2015-05-21 06:03:59"
+        },
+        {
             "name": "jms/metadata",
             "version": "1.5.1",
             "source": {
@@ -2502,6 +2811,226 @@
             "time": "2015-11-12 13:51:40"
         },
         {
+            "name": "leafo/scssphp",
+            "version": "v0.6.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/leafo/scssphp.git",
+                "reference": "a27edad3d16635a222d7204706572e24c338aa17"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/leafo/scssphp/zipball/a27edad3d16635a222d7204706572e24c338aa17",
+                "reference": "a27edad3d16635a222d7204706572e24c338aa17",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "kherge/box": "~2.5",
+                "phpunit/phpunit": "~3.7",
+                "squizlabs/php_codesniffer": "~2.5"
+            },
+            "bin": [
+                "bin/pscss"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Leafo\\ScssPhp\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Leaf Corcoran",
+                    "email": "leafot@gmail.com",
+                    "homepage": "http://leafo.net"
+                }
+            ],
+            "description": "scssphp is a compiler for SCSS written in PHP.",
+            "homepage": "http://leafo.github.io/scssphp/",
+            "keywords": [
+                "css",
+                "less",
+                "sass",
+                "scss",
+                "stylesheet"
+            ],
+            "time": "2016-01-15 02:50:06"
+        },
+        {
+            "name": "menatwork/contao-multicolumnwizard",
+            "version": "3.3.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/menatwork/MultiColumnWizard.git",
+                "reference": "7a7b0dc81657fb0744c4af4d6340d5638cd956a2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/menatwork/MultiColumnWizard/zipball/7a7b0dc81657fb0744c4af4d6340d5638cd956a2",
+                "reference": "7a7b0dc81657fb0744c4af4d6340d5638cd956a2",
+                "shasum": ""
+            },
+            "require": {
+                "contao-community-alliance/composer-installer": "*",
+                "contao/core": ">=2.10,<4"
+            },
+            "replace": {
+                "contao-legacy/multicolumnwizard": "*"
+            },
+            "type": "contao-module",
+            "extra": {
+                "contao": {
+                    "symlinks": {
+                        "system/modules/multicolumnwizard": "system/modules/multicolumnwizard"
+                    }
+                },
+                "branch-alias": {
+                    "dev-master": "3.3.x-dev",
+                    "dev-dev": "3.4.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "system/"
+                ],
+                "psr-4": {
+                    "MenAtWork\\MultiColumnWizard\\": "system/modules/multicolumnwizard/src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Tristan Lins",
+                    "email": "tristan.lins@bit3.de",
+                    "homepage": "http://bit3.de",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Andreas Schempp",
+                    "email": "andreas.schempp@terminal42.ch",
+                    "homepage": "http://www.terminal42.ch",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Yanick Witschi",
+                    "email": "yanick.witschi@terminal42.ch",
+                    "homepage": "http://www.terminal42.ch",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Andreas Isaak",
+                    "email": "contao@men-at-work.de",
+                    "homepage": "http://www.men-at-work.de",
+                    "role": "Project leader"
+                },
+                {
+                    "name": "David Maack",
+                    "email": "contao@men-at-work.de",
+                    "homepage": "http://www.men-at-work.de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "MultiColumWizard for Contao OpenSource CMS",
+            "homepage": "http://www.men-at-work.de",
+            "keywords": [
+                "contao",
+                "widget",
+                "wizard"
+            ],
+            "time": "2015-06-08 08:31:58"
+        },
+        {
+            "name": "menatwork/geolocation",
+            "version": "1.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/menatwork/geolocation.git",
+                "reference": "087d1b1050efd07a3ee1a25a81fe16f26f94fc6d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/menatwork/geolocation/zipball/087d1b1050efd07a3ee1a25a81fe16f26f94fc6d",
+                "reference": "087d1b1050efd07a3ee1a25a81fe16f26f94fc6d",
+                "shasum": ""
+            },
+            "require": {
+                "contao-community-alliance/composer-installer": "*",
+                "contao/core": ">=2.11,<4",
+                "discordier/httprequestextended": ">=1.0,<1.2",
+                "menatwork/contao-multicolumnwizard": "~3.2",
+                "php": ">=5.3"
+            },
+            "replace": {
+                "contao-legacy/geolocation": "*"
+            },
+            "suggest": {
+                "contao-legacy/ajax": "Allows the user to change the country with a AJAX call."
+            },
+            "type": "contao-module",
+            "extra": {
+                "contao": {
+                    "sources": {
+                        "system/config/countriesByContinent.php": "system/config/countriesByContinent.php",
+                        "system/modules/geolocation": "system/modules/geolocation"
+                    },
+                    "transifex": {
+                        "project": "geolocation",
+                        "prefix": "",
+                        "languages_cto": "system/modules/geolocation/languages",
+                        "languages_tx": ".tx"
+                    }
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "system/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Stefan Heimes",
+                    "email": "heimes@men-at-work.de",
+                    "homepage": "http://www.men-at-work.de",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Andreas Isaak",
+                    "email": "isaak@men-at-work.de",
+                    "homepage": "http://www.men-at-work.de",
+                    "role": "Developer"
+                },
+                {
+                    "name": "David Maack",
+                    "email": "maack@men-at-work.de",
+                    "homepage": "http://www.men-at-work.de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Library for user location detection",
+            "homepage": "http://www.men-at-work.de",
+            "keywords": [
+                "detection",
+                "geoip",
+                "geolocation",
+                "library"
+            ],
+            "time": "2015-07-26 16:22:51"
+        },
+        {
             "name": "michelf/php-markdown",
             "version": "1.6.0",
             "source": {
@@ -2712,6 +3241,68 @@
                 "rest"
             ],
             "time": "2015-12-16 15:17:51"
+        },
+        {
+            "name": "oyejorge/less.php",
+            "version": "v1.7.0.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/oyejorge/less.php.git",
+                "reference": "a1e2d3c20794b37ac4d0baeb24613e579584033b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/oyejorge/less.php/zipball/a1e2d3c20794b37ac4d0baeb24613e579584033b",
+                "reference": "a1e2d3c20794b37ac4d0baeb24613e579584033b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.8.18"
+            },
+            "bin": [
+                "bin/lessc"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Less": "lib/"
+                },
+                "classmap": [
+                    "lessc.inc.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Matt Agar",
+                    "homepage": "https://github.com/agar"
+                },
+                {
+                    "name": "Martin Jantošovič",
+                    "homepage": "https://github.com/Mordred"
+                },
+                {
+                    "name": "Josh Schmidt",
+                    "homepage": "https://github.com/oyejorge"
+                }
+            ],
+            "description": "PHP port of the Javascript version of LESS http://lesscss.org",
+            "homepage": "http://lessphp.gpeasy.com",
+            "keywords": [
+                "css",
+                "less",
+                "less.js",
+                "lesscss",
+                "php",
+                "stylesheet"
+            ],
+            "time": "2015-12-30 05:47:36"
         },
         {
             "name": "paragonie/random_compat",
@@ -2968,6 +3559,40 @@
             "time": "2015-07-25 16:39:46"
         },
         {
+            "name": "phpspec/php-diff",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpspec/php-diff.git",
+                "reference": "30e103d19519fe678ae64a60d77884ef3d71b28a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpspec/php-diff/zipball/30e103d19519fe678ae64a60d77884ef3d71b28a",
+                "reference": "30e103d19519fe678ae64a60d77884ef3d71b28a",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Diff": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Boulton",
+                    "homepage": "http://github.com/chrisboulton",
+                    "role": "Original developer"
+                }
+            ],
+            "description": "A comprehensive library for generating differences between two hashable objects (strings or arrays).",
+            "time": "2013-11-01 13:02:21"
+        },
+        {
             "name": "psr/http-message",
             "version": "1.0",
             "source": {
@@ -3206,6 +3831,60 @@
             "time": "2015-11-07 08:07:40"
         },
         {
+            "name": "simplepie/simplepie",
+            "version": "1.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/simplepie/simplepie.git",
+                "reference": "ce53709778bc1e2e4deda1651b66e5081398d5cc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/simplepie/simplepie/zipball/ce53709778bc1e2e4deda1651b66e5081398d5cc",
+                "reference": "ce53709778bc1e2e4deda1651b66e5081398d5cc",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "SimplePie": "library"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Ryan Parman",
+                    "homepage": "http://ryanparman.com/",
+                    "role": "Creator, alumnus developer"
+                },
+                {
+                    "name": "Geoffrey Sneddon",
+                    "homepage": "http://gsnedders.com/",
+                    "role": "Alumnus developer"
+                },
+                {
+                    "name": "Ryan McCue",
+                    "email": "me@ryanmccue.info",
+                    "homepage": "http://ryanmccue.info/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A simple Atom/RSS parsing library for PHP",
+            "homepage": "http://simplepie.org/",
+            "keywords": [
+                "atom",
+                "feeds",
+                "rss"
+            ],
+            "time": "2012-10-30 17:54:03"
+        },
+        {
             "name": "sonata-project/admin-bundle",
             "version": "dev-master",
             "source": {
@@ -3215,7 +3894,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/34a171da0686721eeab3f94cb2aa84533a2d777e",
+                "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/ee5098f6115380ee4e4ccccd76a6e564045e0e1c",
                 "reference": "34a171da0686721eeab3f94cb2aa84533a2d777e",
                 "shasum": ""
             },
@@ -4683,6 +5362,117 @@
                 "framework"
             ],
             "time": "2016-01-14 12:01:11"
+        },
+        {
+            "name": "tecnick.com/tcpdf",
+            "version": "6.2.11",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tecnickcom/TCPDF.git",
+                "reference": "354433a33946ae7497c3eab291eaaf814bccbfab"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tecnickcom/TCPDF/zipball/354433a33946ae7497c3eab291eaaf814bccbfab",
+                "reference": "354433a33946ae7497c3eab291eaaf814bccbfab",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "fonts",
+                    "config",
+                    "include",
+                    "tcpdf.php",
+                    "tcpdf_parser.php",
+                    "tcpdf_import.php",
+                    "tcpdf_barcodes_1d.php",
+                    "tcpdf_barcodes_2d.php",
+                    "include/tcpdf_colors.php",
+                    "include/tcpdf_filters.php",
+                    "include/tcpdf_font_data.php",
+                    "include/tcpdf_fonts.php",
+                    "include/tcpdf_images.php",
+                    "include/tcpdf_static.php",
+                    "include/barcodes/datamatrix.php",
+                    "include/barcodes/pdf417.php",
+                    "include/barcodes/qrcode.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPLv3"
+            ],
+            "authors": [
+                {
+                    "name": "Nicola Asuni",
+                    "email": "info@tecnick.com",
+                    "homepage": "http://nicolaasuni.tecnick.com"
+                }
+            ],
+            "description": "TCPDF is a PHP class for generating PDF documents and barcodes.",
+            "homepage": "http://www.tcpdf.org/",
+            "keywords": [
+                "PDFD32000-2008",
+                "TCPDF",
+                "barcodes",
+                "datamatrix",
+                "pdf",
+                "pdf417",
+                "qrcode"
+            ],
+            "abandoned": "tecnickcom/tcpdf",
+            "time": "2015-08-02 12:30:27"
+        },
+        {
+            "name": "true/punycode",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/true/php-punycode.git",
+                "reference": "21c0025130b4e2b2d0b7dbe5f86e9e1512507656"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/true/php-punycode/zipball/21c0025130b4e2b2d0b7dbe5f86e9e1512507656",
+                "reference": "21c0025130b4e2b2d0b7dbe5f86e9e1512507656",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.x",
+                "satooshi/php-coveralls": "dev-master",
+                "squizlabs/php_codesniffer": "~2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "True\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Renan Gonçalves",
+                    "email": "renan.saddam@gmail.com"
+                }
+            ],
+            "description": "A Bootstring encoding of Unicode for Internationalized Domain Names in Applications (IDNA)",
+            "homepage": "https://github.com/true/php-punycode",
+            "keywords": [
+                "idna",
+                "punycode"
+            ],
+            "time": "2015-03-12 16:49:35"
         },
         {
             "name": "twig/extensions",
