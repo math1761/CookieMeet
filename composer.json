@@ -1,5 +1,5 @@
 {
-    "name": "mathieu/symfo-project",
+    "name": "~/Sites/SymfoHetic",
     "license": "proprietary",
     "type": "project",
     "autoload": {
@@ -30,7 +30,6 @@
         "genemu/form-bundle": "^2.2",
         "php-http/httplug": "^1.0",
         "guzzle/guzzle": "^3.9",
-        "hoa/websocket": "~3.0",
         "sonata-project/admin-bundle": "dev-master",
         "sonata-project/doctrine-orm-admin-bundle": "dev-master",
         "egeloen/google-map-bundle": "^2.2",

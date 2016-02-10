@@ -7,8 +7,5 @@ use BackyBack\CookieMeetBundle\Form\AddServiceForm;
 
 class MessengerController extends Controller
 {
-    public function MessengerAction()
-    {
-        return $this->render('BackyBackCookieMeetBundle:Messenger:messenger.html.twig');
-    }
+
 }
