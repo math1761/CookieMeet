@@ -25,7 +25,7 @@ class AddServiceController extends Controller
     public function AddServiceAction()
     {
         $form = $this->AddServiceFormAction();
-        return $this->render('BackyBackCookieMeetBundle:AddService:addme.html.twig', array('form' => $form));
+        return $this->render('BackyBackCookieMeetBundle:AddService:addme.html.twig', array('form' => $form->createView()));
     }
 
     public function AddServiceFormAction() {
