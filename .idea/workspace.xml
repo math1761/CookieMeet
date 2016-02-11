@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d9d5246-7ede-464e-bba2-a148e6b0284d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/BackyBack/CookieMeetBundle/Resources/views/Index/index.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BackyBack/CookieMeetBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/BackyBack/CookieMeetBundle/Resources/config/routing.yml" />
     </list>
     <list id="a90a037c-2740-466d-b2e5-50b7c7883aa3" name="New changelist" comment="New changelist" />
     <ignored path="SymfoProject.iws" />
@@ -639,7 +637,13 @@
       <option name="project" value="LOCAL" />
       <updated>1455194821821</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Index html readded">
+      <created>1455197617645</created>
+      <option name="number" value="00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1455197617645</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -721,7 +725,8 @@
     <MESSAGE value="Added Autocomplete" />
     <MESSAGE value="Removed Useless Messenger" />
     <MESSAGE value="Geocoding done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Geocoding done" />
+    <MESSAGE value="Index html readded" />
+    <option name="LAST_COMMIT_MESSAGE" value="Index html readded" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
