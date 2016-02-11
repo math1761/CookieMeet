@@ -12,6 +12,7 @@ use Ivory\GoogleMap\Places\Autocomplete;
 use Ivory\GoogleMap\Places\AutocompleteComponentRestriction;
 use Ivory\GoogleMap\Places\AutocompleteType;
 use Ivory\GoogleMap\Helper\Places\AutocompleteHelper;
+use Ivory\GoogleMap\Services\Geocoding\Geocoder;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 
 class MapController extends Controller
@@ -58,6 +59,10 @@ class MapController extends Controller
         $map->setLanguage('fr');
         $map->addMarker($marker);
         $places = $this->mapsPlacesAction();
+        $geocoder = new Geocoder();
+        $geocoder = $this->get('ivory_google_map.geocoder');
+        $response = $geocoder->geocode('1600 Amphitheatre Parkway, Mountain View, CA');
+        var_dump($response);
         return $this->render('BackyBackCookieMeetBundle:Map:map.html.twig', array(
             'map' => $map));
     }

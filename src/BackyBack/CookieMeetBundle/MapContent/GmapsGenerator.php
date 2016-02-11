@@ -10,8 +10,6 @@
 namespace BackyBack\CookieMeetBundle\MapContent\GmapsGenerator;
 
 use BackyBack\CookieMeetBundle\Controller\MapController as Mappy;
-use Ivory\GoogleMap\Map;
-use Ivory\GoogleMap\MapTypeId;
 use Ivory\GoogleMap\Places\Autocomplete;
 use Ivory\GoogleMap\Places\AutocompleteComponentRestriction;
 use Ivory\GoogleMap\Places\AutocompleteType;
