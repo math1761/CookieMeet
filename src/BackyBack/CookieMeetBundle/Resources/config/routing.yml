@@ -1,0 +1,15 @@
+backy_back_cookie_meet_home:
+    path:     /
+    defaults: { _controller: BackyBackCookieMeetBundle:Home:getHome }
+
+backy_back_cookie_meet_users:
+    path:     /users
+    defaults: { _controller: BackyBackCookieMeetBundle:User:getUsers }
+
+backy_back_cookie_meet_recepee:
+    path:     /recepee
+    defaults: { _controller: BackyBackCookieMeetBundle:AddRecepee:AddRecepee }
+
+backy_back_cookie_meet_map:
+    path:     /map
+    defaults: { _controller: BackyBackCookieMeetBundle:Map:AddMap }

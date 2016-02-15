@@ -1,0 +1,13 @@
+<body>
+{% block stylesheets %}
+    {% stylesheets '@BackyBackCookieMeetBundle/Resources/public/css/*' filter='cssrewrite' %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block javascripts %}
+    {% javascripts '@BackyBackCookieMeetBundle/Resources/public/js/*' %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
+</body>
