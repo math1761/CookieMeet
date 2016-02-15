@@ -10,6 +10,10 @@
 /vendor/
 /bin/
 /composer.phar
+<<<<<<< HEAD
 composer.lock
 .DS_Store
 /.idea/
+=======
+.idea/
+>>>>>>> e39835d60ae2ffe68075993e27133f3b2d4eb160
