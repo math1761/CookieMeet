@@ -34,7 +34,11 @@
         "willdurand/geocoder": "^3.3",
         "jeroendesloovere/geolocation-bundle": "^1.0",
         "cboden/ratchet": "^0.3.4",
+<<<<<<< HEAD
         "phpunit/phpunit": "^5.1"
+=======
+        "phpunit/phpunit": "^5.2"
+>>>>>>> 4b671b32afa6fc9ab86b01ea3b87f9361ee76f9f
     },
     "require-dev": {
         "sensio/generator-bundle": "~3.0",

@@ -40,8 +40,8 @@ twig:
 doctrine:
     dbal:
         driver:   pdo_mysql
-        host:     "127.0.0.1"
-        port:     "%database_port%"
+        host:     "localhost"
+        port:     "8889"
         dbname:   "symfoHetic"
         user:     "root"
         password: "root"
