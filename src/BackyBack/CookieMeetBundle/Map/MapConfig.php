@@ -13,7 +13,8 @@ use Ivory\GoogleMap\MapTypeId;
 use Ivory\GoogleMap\Overlays\Animation;
 use Ivory\GoogleMap\Overlays\Marker;
 use Ivory\GoogleMap\Services\Geocoding\Geocoder;
-use Ivory\GoogleMap\Services\Geocoding\Result\GeocoderResult;
+use Ivory\GoogleMap\Services\Geocoding\Result\GeocoderLocationType;
+use Ivory\GoogleMap\Services\Geocoding\Result\GeocoderResult as Result;
 use BackyBack\CookieMeetBundle\Controller\MapController as Mappy;
 
 class MapConfig extends Mappy
@@ -49,28 +50,28 @@ class MapConfig extends Mappy
     public function markerConfigAction($marker)
     {
         $marker = new Marker();
-        $geo = new Geocoder();
-        $geo->geocode('73 Boulevard Berthier, Paris, France');
-        $response = new GeocoderResult($geo);
+        $curl     = new \Ivory\HttpAdapter\CurlHttpAdapter();
+        $geocoder = new \Geocoder\Provider\GoogleMaps($curl);
+        $response = new Result();
+
+        $geocoder->geocode('73 Boulevard Berthier, Paris, France');
 
         foreach($response->getResults() as $result)
         {
-            $marker = $this->get('ivory_google_map.marker');
-
             // Position the marker
             $marker->setPosition($result->getGeometry()->getLocation());
+            $marker->setAnimation(Animation::DROP);
 
+            $marker->setOptions(array(
+                'clickable' => true,
+                'flat'      => true,
+            ));
             // Add the marker to the map
             $map->addMarker($marker);
         }
         $marker->setPrefixJavascriptVariable('marker_');
         /*$marker->setPosition(48.856614, 2.352222, true);*/
-        $marker->setAnimation(Animation::DROP);
 
-        $marker->setOptions(array(
-            'clickable' => true,
-            'flat'      => true,
-        ));
         return $marker;
     }
 }

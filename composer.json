@@ -32,11 +32,14 @@
         "guzzle/guzzle": "^3.9",
         "egeloen/google-map-bundle": "^2.2",
         "willdurand/geocoder": "^3.3",
-        "jeroendesloovere/geolocation-bundle": "^1.0"
+        "jeroendesloovere/geolocation-bundle": "^1.0",
+        "cboden/ratchet": "^0.3.4"
     },
     "require-dev": {
         "sensio/generator-bundle": "~3.0",
-        "symfony/phpunit-bridge": "~2.7"
+        "symfony/phpunit-bridge": "~2.7",
+        "hautelook/alice-bundle": "^1.2",
+        "doctrine/data-fixtures": "^1.1"
     },
     "scripts": {
         "post-install-cmd": [
