@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: mathieu
+ * User: william
  * Date: 17/02/2016
  * Time: 12:05
  */
@@ -16,4 +16,19 @@ class MessengerController extends Controller
     {
         return $this->render("BackyBackCookieMeetBundle:Messenger:messenger.html.twig");
     }
+
+
+    public function showUsersAction()
+    {
+
+        $em = $this->getDoctrine()->getManager();
+
+        $users = $em->getRepository('BackyBackCookieMeetBundle:User')->findAll();
+
+        return $this->render('@User/Messenger/messenger.html.twig', array(
+            'users' => $users,
+        ));
+
+    }
+
 }
