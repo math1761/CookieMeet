@@ -33,7 +33,7 @@
         "egeloen/google-map-bundle": "^2.2",
         "willdurand/geocoder": "^3.3",
         "jeroendesloovere/geolocation-bundle": "^1.0",
-        "phpunit/phpunit": "^5.2"
+        "hoa/websocket": "~3.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "~3.0",

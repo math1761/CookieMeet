@@ -18,7 +18,6 @@ class AppKernel extends Kernel
             new JMS\SerializerBundle\JMSSerializerBundle(),
             new FOS\RestBundle\FOSRestBundle(),
             new Nelmio\ApiDocBundle\NelmioApiDocBundle(),
-            new Vich\UploaderBundle\VichUploaderBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new JeroenDesloovere\Bundle\GeolocationBundle\JeroenDesloovereGeolocationBundle(),
             new Genemu\Bundle\FormBundle\GenemuFormBundle(),

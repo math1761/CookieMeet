@@ -19,9 +19,11 @@
         </testsuite>
     </testsuites>
 
+    <!--
     <php>
-        <server name="KERNEL_DIR" value="/app/AppKernel" />
+        <server name="KERNEL_DIR" value="/path/to/your/app/" />
     </php>
+    -->
 
     <filter>
         <whitelist>

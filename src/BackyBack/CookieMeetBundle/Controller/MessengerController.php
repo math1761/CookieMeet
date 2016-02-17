@@ -9,14 +9,11 @@
 namespace BackyBack\CookieMeetBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\Routing\Exception\ResourceNotFoundException;
-use FOS\UserBundle\Model\UserManagerInterface;
-use FOS\UserBundle\Doctrine\UserManager;
 
 class MessengerController extends Controller
 {
     public function getMessengerAction()
     {
-        return $this->render("BackyBackCookieMeetBundle:Home:index.html.twig");
+        return $this->render("BackyBackCookieMeetBundle:Messenger:messenger.html.twig");
     }
 }

@@ -80,11 +80,3 @@ assetic:
     use_controller: '%kernel.debug%'
     filters:
         cssrewrite: ~
-
-vich_uploader:
-    db_driver: orm
-
-p2_ratchet:
-    provider: ~             # The client provider to use, null for default
-    address: 0.0.0.0        # The address to receive sockets on (0.0.0.0 means receive from any)
-    port: 8080              # The port the socket server will listen on
