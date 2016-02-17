@@ -16,4 +16,22 @@ class MessengerController extends Controller
     {
         return $this->render("BackyBackCookieMeetBundle:Messenger:messenger.html.twig");
     }
+<<<<<<< Updated upstream
 }
+=======
+
+    public function showUsersAction()
+    {
+
+        $em = $this->getDoctrine()->getManager();
+
+        $users = $em->getRepository('BackyBackCookieMeetBundle:User')->findAll();
+
+        return $this->render('@User/Messenger/messenger.html.twig', array(
+            'users' => $users,
+        ));
+
+    }
+
+}
+>>>>>>> Stashed changes
