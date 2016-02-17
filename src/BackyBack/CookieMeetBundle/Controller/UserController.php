@@ -10,7 +10,8 @@ class UserController extends Controller
     public function getUsersAction()
     {
         $users = $this->listUsersAction();
-        return $this->render('BackyBackCookieMeetBundle:User:user.html.twig', array('users' => $users));
+        $currentUser = $this->getCurrentUser();
+        return $this->render('BackyBackCookieMeetBundle:User:user.html.twig', array('currentUsers' => $users));
     }
 
     public function listUsersAction()
@@ -18,11 +19,13 @@ class UserController extends Controller
        $userManager = $this->get('fos_user.user_manager');
         $users = $userManager->findUsers();
 
-
-        /*for ($i = 0; $users > $i; $i++) {
-            echo $users;
-        }*/
-
+        var_dump($users);
         return $users;
+    }
+
+    private function getCurrentUser()
+    {
+        $user = $this->getUser();
+        var_dump($user);
     }
 }

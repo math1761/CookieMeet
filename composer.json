@@ -35,7 +35,6 @@
         "jeroendesloovere/geolocation-bundle": "^1.0",
         "hoa/websocket": "~3.0",
         "phpunit/phpunit": "^5.2",
-        "cboden/ratchet": "^0.3.4",
         "hautelook/alice-bundle": "^1.2"
     },
     "require-dev": {

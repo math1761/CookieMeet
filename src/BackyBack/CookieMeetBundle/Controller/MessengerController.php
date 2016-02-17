@@ -17,7 +17,7 @@ class MessengerController extends Controller
         return $this->render("BackyBackCookieMeetBundle:Messenger:messenger.html.twig");
     }
 
-
+/*
     public function showUsersAction()
     {
 
@@ -28,7 +28,6 @@ class MessengerController extends Controller
         return $this->render('@User/Messenger/messenger.html.twig', array(
             'users' => $users,
         ));
-
-    }
+    }*/
 
 }
