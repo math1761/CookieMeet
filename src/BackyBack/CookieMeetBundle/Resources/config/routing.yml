@@ -10,6 +10,10 @@ backy_back_cookie_meet_recepee:
     path:     /recepee
     defaults: { _controller: BackyBackCookieMeetBundle:AddRecepee:AddRecepee }
 
+backy_back_cookie_meet_messenger:
+    path:     /messenger
+    defaults: { _controller: BackyBackCookieMeetBundle:Messenger:getMessenger }
+
 backy_back_cookie_meet_map:
     path:     /map
     defaults: { _controller: BackyBackCookieMeetBundle:Map:AddMap }

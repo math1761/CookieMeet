@@ -8,14 +8,21 @@
 
 namespace BackyBack\CookieMeetBundle\Tests\Login;
 
+use Symfony\Bridge\PhpUnit;
+use Hautelook\AliceBundle\Alice;
 
-class LoginTest extends PHPUnit_Framework_TestCase
+class LoginTest
 {
-   private function isLoggedTest()
+   private function testisLoggedIn()
    {
-       $user = $this->container->get('security.context')->getToken()->getUser();
-       $user->getlocation();
-       var_dump($user);
+       $stack = array();
+       $this->assertEquals(0, count($stack));
 
+       array_push($stack, 'foo');
+       $this->assertEquals('foo', $stack[count($stack)-1]);
+       $this->assertEquals(1, count($stack));
+
+       $this->assertEquals('foo', array_pop($stack));
+       $this->assertEquals(0, count($stack));
    }
 }
