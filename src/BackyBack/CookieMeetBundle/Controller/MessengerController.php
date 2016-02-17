@@ -10,24 +10,27 @@ namespace BackyBack\CookieMeetBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
+/**
+ * Class MessengerController
+ * @package BackyBack\CookieMeetBundle\Controller
+ */
 class MessengerController extends Controller
 {
+    /**
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function getMessengerAction()
     {
-        return $this->render("BackyBackCookieMeetBundle:Messenger:messenger.html.twig");
+        $currentUser = $this->getCurrentUserAction();
+        return $this->render("BackyBackCookieMeetBundle:Messenger:messenger.html.twig",array('currentUser' => $currentUser));
     }
 
-/*
-    public function showUsersAction()
+    /**
+     * @return mixed
+     */
+    public function getCurrentUserAction()
     {
-
-        $em = $this->getDoctrine()->getManager();
-
-        $users = $em->getRepository('BackyBackCookieMeetBundle:User')->findAll();
-
-        return $this->render('@User/Messenger/messenger.html.twig', array(
-            'users' => $users,
-        ));
-    }*/
-
+        $currentUser = $this->getUser();
+        return $currentUser;
+    }
 }
