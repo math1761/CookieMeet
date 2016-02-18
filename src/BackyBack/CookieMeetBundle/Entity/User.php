@@ -3,6 +3,7 @@
 namespace BackyBack\CookieMeetBundle\Entity;
 
 use FOS\UserBundle\Model\User as BaseUser;
+use Hautelook\AliceBundle\Alice;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Ivory\GoogleMap\Places\Autocomplete;

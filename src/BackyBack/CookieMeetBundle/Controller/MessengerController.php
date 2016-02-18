@@ -33,4 +33,5 @@ class MessengerController extends Controller
         $currentUser = $this->getUser();
         return $currentUser;
     }
+
 }

@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new JeroenDesloovere\Bundle\GeolocationBundle\JeroenDesloovereGeolocationBundle(),
             new Genemu\Bundle\FormBundle\GenemuFormBundle(),
+            new Bazinga\Bundle\GeocoderBundle\BazingaGeocoderBundle(),
             new Ivory\GoogleMapBundle\IvoryGoogleMapBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new BackyBack\CookieMeetBundle\BackyBackCookieMeetBundle(),
@@ -31,6 +32,7 @@ class AppKernel extends Kernel
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
             $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
+            $bundles[] = new Hautelook\AliceBundle\HautelookAliceBundle();
 
         }
 

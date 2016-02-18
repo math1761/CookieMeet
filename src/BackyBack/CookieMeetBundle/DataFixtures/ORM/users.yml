@@ -1,0 +1,19 @@
+BackyBack\CookieMeetBundle\Entity\User:
+    user1:
+      username: admin
+      email: admin@gmail.com
+      address: 73 Boulevard Berthier
+      firstname: Mathieu
+      name: Levi
+      enabled: true
+      plainPassword: root
+      roles: [ROLE_SUPER_ADMIN]
+    user2:
+          username: kikoo
+          email: test@gmail.com
+          address: 15 rue marceau
+          firstname: Kikoo
+          name: Kiko
+          enabled: true
+          plainPassword: root
+          roles: [ROLE_SUPER_ADMIN]

@@ -31,11 +31,11 @@
         "php-http/httplug": "^1.0",
         "guzzle/guzzle": "^3.9",
         "egeloen/google-map-bundle": "^2.2",
-        "willdurand/geocoder": "^3.3",
+        "willdurand/geocoder-bundle": "@stable",
         "jeroendesloovere/geolocation-bundle": "^1.0",
         "hoa/websocket": "~3.0",
         "phpunit/phpunit": "^5.2",
-        "hautelook/alice-bundle": "^1.2"
+        "guzzlehttp/guzzle": "^6.1"
     },
     "require-dev": {
         "sensio/generator-bundle": "~3.0",
