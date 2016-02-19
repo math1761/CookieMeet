@@ -41,7 +41,7 @@ doctrine:
     dbal:
         driver:   pdo_mysql
         host:     "127.0.0.1"
-        port:     ""
+        port:     "8889"
         dbname:   "symfoHetic"
         user:     "root"
         password: "root"
