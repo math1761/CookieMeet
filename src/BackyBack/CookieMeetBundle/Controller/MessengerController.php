@@ -52,6 +52,7 @@ class MessengerController extends Controller
      */
     private function getUsersToJSONAction(Request $request)
     {
+        $currentUser = $this->getCurrentUserAction();
         $user = $this->getDoctrine()->getRepository('BackyBackCookieMeetBundle:User');
         $request = $this->post('/api/messenger', [
             'users' => json_encode($user)
