@@ -6,10 +6,6 @@ use FOS\UserBundle\Model\User as BaseUser;
 use Hautelook\AliceBundle\Alice;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
-use Ivory\GoogleMap\Places\Autocomplete;
-use Ivory\GoogleMap\Places\AutocompleteComponentRestriction;
-use Ivory\GoogleMap\Helper\Places\AutocompleteHelper;
-use Ivory\GoogleMap\Places\AutocompleteType;
 
 /**
  * User
@@ -142,19 +138,6 @@ class User extends BaseUser
      */
     public function setAddress($address)
     {
-        /*$address = new Autocomplete();
-
-        $address->setPrefixJavascriptVariable('place_autocomplete_');
-        $address->setInputId('place_input');
-
-        $address->setInputAttributes(array('class' => 'my-class'));
-        $address->setInputAttribute('class', 'my-class');
-
-        /*$autocomplete->setTypes(array(AutocompleteType::ESTABLISHMENT));*/
-        /*$address->setComponentRestrictions(array(AutocompleteComponentRestriction::COUNTRY => 'fr'));
-
-        $address->setLanguage('fr');*/
-
         $this->address = $address;
 
         return $this;
@@ -167,13 +150,6 @@ class User extends BaseUser
      */
     public function getAddress()
     {
-        /*$address = $this->setAddress($this);
-        $autocomplete = $this->AutoCompleteAction();
-        $autocompleteHelper = new AutocompleteHelper();
-        echo $autocompleteHelper->renderHtmlContainer($autocomplete);
-        echo $autocompleteHelper->renderJavascripts($autocomplete);
-
-        return $autocomplete;*/
         return $this->address;
     }
 }
