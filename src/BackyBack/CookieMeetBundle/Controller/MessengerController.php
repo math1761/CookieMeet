@@ -67,9 +67,6 @@ class MessengerController extends Controller
     private function getUsersToMessageAction(Request $request)
     {
         $user = $this->getUsersToJSONAction($request);
-        $user = $this->get('/api/messenger', [
-            'user_decode' => json_decode($user)
-        ]);
     }
 
     /**
