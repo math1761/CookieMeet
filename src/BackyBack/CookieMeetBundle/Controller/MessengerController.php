@@ -8,8 +8,8 @@
 
 namespace BackyBack\CookieMeetBundle\Controller;
 
+use FOS\RestBundle\Controller\FOSRestController;
 use Guzzle\Http\Message\Request;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 use Doctrine\Tests\Common\DataFixtures\TestEntity\User;
 use FOS\RestBundle\Controller\Annotations\View;
@@ -21,15 +21,27 @@ use Hoa\Event\Source as Source;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
+use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 
 /**
  * Class MessengerController
  * @package BackyBack\CookieMeetBundle\Controller
  */
-class MessengerController extends Controller
+class MessengerController extends FOSRestController
 {
     /**
-     * @return \Symfony\Component\HttpFoundation\Response
+     * Return messenger
+     *
+     * @ApiDoc(
+     *   resource = true,
+     *   description = "Get the messenger's route",
+     *   statusCodes = {
+     *     200 = "Returned when successful",
+     *     404 = "Returned when the messenger doesn't respond"
+     *   }
+     * )
+     *
+     * @return View
      */
     public function getMessengerAction()
     {

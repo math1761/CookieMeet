@@ -15,6 +15,11 @@ backy_back_cookie_meet_api_map:
     prefix: /api
     resource: BackyBack\CookieMeetBundle\Controller\MapController
 
+backy_back_cookie_meet_api_messenger:
+    type: rest
+    prefix: /api
+    resource: BackyBack\CookieMeetBundle\Controller\MessengerController
+
 backy_back_cookie_meet_user:
     type: rest
     prefix: /api

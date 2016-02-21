@@ -14,6 +14,7 @@ class Test extends \PHPUnit_Framework_TestCase
 {
     /**
      * @return string
+     *
      */
     public function UsertojsonTest()
     {
