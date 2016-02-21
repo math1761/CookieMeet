@@ -41,7 +41,7 @@ doctrine:
     dbal:
         driver:   pdo_mysql
         host:     "127.0.0.1"
-        port:     "8889"
+        port:     ""
         dbname:   "symfoHetic"
         user:     "root"
         password: "root"
@@ -87,13 +87,13 @@ fos_rest:
     format_listener:
         enabled: true
         rules:
-            - { path: '^/api/', priorities: ['json', 'xml'], fallback_format: 'html' }
+            - { path: '^/api/', priorities: ['json'], fallback_format: 'html' }
     versioning: true
     view:
         view_response_listener: 'force'
 
 sensio_framework_extra:
-    view:   { annotations: false }
-    router: { annotations: true }
+    view:
+        annotations: false
 
 bazinga_geocoder: ~

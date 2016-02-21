@@ -10,6 +10,12 @@ backy_back_cookie_meet_messenger:
     path:     /messenger
     defaults: { _controller: BackyBackCookieMeetBundle:Messenger:getMessenger }
 
-backy_back_cookie_meet_api:
+backy_back_cookie_meet_api_map:
     type: rest
-    resource: BackyBack\CookieMeetBundle\Controller\API\MapAPIController
+    prefix: /api
+    resource: BackyBack\CookieMeetBundle\Controller\MapController
+
+backy_back_cookie_meet_user:
+    type: rest
+    prefix: /api
+    resource: BackyBack\CookieMeetBundle\Controller\UserAPIController
