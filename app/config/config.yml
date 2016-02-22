@@ -96,4 +96,30 @@ sensio_framework_extra:
     view:
         annotations: false
 
-bazinga_geocoder: ~
+ivory_google_map:
+    geocoder:
+        # Enable the service
+        enabled: true
+
+        # Geocoder class
+        class: "Ivory\GoogleMap\Services\Geocoding\Geocoder"
+        provider:
+            # Fake IP
+            # If you set a fake IP, the parameter will replace the REMOTE_ADDR value by the given one
+            #fake_ip: "123.345.567.123"
+
+            # Provider class
+            class: "Ivory\GoogleMap\Services\Geocoding\GeocoderProvider"
+
+            # API key used by the provider
+            # If you set an API key, this paremeter will be the second parameter provider constructor
+            # By default, there is no api key ^_^
+            api_key: "apikey"
+
+            # Locale used by the provider
+            # If your set a locale, this parameter will be the second parameter provider constructor if there is no api key else it will be the third
+            # By default, there is no locale
+            locale: "fr"
+
+        # Adapter class
+        adapter: "Geocoder\HttpAdapter\BuzzHttpAdapter"

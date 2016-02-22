@@ -2,15 +2,12 @@
 
 namespace BackyBack\CookieMeetBundle\Controller;
 
+use Doctrine\ORM\EntityNotFoundException;
 use FOS\RestBundle\Controller\FOSRestController;
-use Ivory\GoogleMap\Map;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use Symfony\Component\Routing\Annotation\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\Request;
-use FOS\RestBundle\Request as FOSRequest;
-use Ivory\GoogleMap\Helper\MapHelper;
-use Ivory\GoogleMap\MapTypeId;
+use Symfony\Component\HttpFoundation\Response;
 use FOS\RestBundle\View\View;
 
 class MapController extends FOSRestController
@@ -26,26 +23,28 @@ class MapController extends FOSRestController
      *     404 = "Returned when the user's address is not found"
      *   }
      * )
-     *
-     * @return View
      */
-    public function AddMapAction()
+    public function geocodeAction(Request $request)
     {
-        $mapHelper = new MapHelper();
-        $map = $this->configMapAction();
+        $curl     = new \Ivory\HttpAdapter\CurlHttpAdapter();
+        $geocoder = new \Geocoder\Provider\GoogleMaps($curl);
 
-        echo $mapHelper->renderHtmlContainer($map);
-        echo $mapHelper->renderJavascripts($map);
-        return $this->render('BackyBackCookieMeetBundle:Map:map.html.twig', array(
-            'map' => $map));
+        $geocoder->geocode('73 Boulevard Berthier');
+
+        $response = new Response();
+        $response->headers->set('Content-Type', 'application/json');
+
+        return $response->setContent(json_encode(array(
+            'coordonnees' => $geocoder
+        )));
     }
 
-    public function configMapAction()
+    /*public function configMapAction()
     {
         $map = new Map();
 
-        /*$marker = $this->markerConfigAction($map);*/
-        /*$map->addMarker($marker);*/
+        $marker = $this->markerConfigAction($map);
+        $map->addMarker($marker);
         $map->setPrefixJavascriptVariable('map_');
         $map->setHtmlContainerId('map_canvas');
 
@@ -63,12 +62,12 @@ class MapController extends FOSRestController
             'width'  => '600px',
             'height' => '600px',
         ));
-        /*$map->addMarker($marker);*/
+        $map->addMarker($marker);
 
         $map->setLanguage('fr');
 
         return $map;
-    }
+    }*/
 
     /*public function addMarkerAction($marker)
     {
@@ -83,38 +82,4 @@ class MapController extends FOSRestController
         }
         return $marker;
     }*/
-
-
-    private function geocodeAction(Request $request)
-    {
-        // Retrieve information from the current user (by its IP address)
-        $result = $this->container
-            ->get('bazinga_geocoder.geocoder')
-            ->using('google_maps')
-            ->geocode($request->server->get('REMOTE_ADDR'));
-
-        return array(
-            'geocoded'        => $result,
-            'nearest_objects' => $objects
-        );
-    }
-
-    private function retrieveUserbyAddress(Request $request)
-    {
-        $request = $this
-            ->getDoctrine()
-            ->getRepository('BackyBackCookieMeetBundle:User')
-            ->find($address);
-
-        foreach ($request as $key)
-        {
-            echo $key->getContent();
-        }
-        if (!$request) {
-            throw $this->createNotFoundException('No address found '.$address);
-        }
-        var_dump($request);
-
-        return $request;
-    }
 }

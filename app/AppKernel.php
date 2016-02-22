@@ -21,7 +21,6 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new JeroenDesloovere\Bundle\GeolocationBundle\JeroenDesloovereGeolocationBundle(),
             new Genemu\Bundle\FormBundle\GenemuFormBundle(),
-            new Bazinga\Bundle\GeocoderBundle\BazingaGeocoderBundle(),
             new Ivory\GoogleMapBundle\IvoryGoogleMapBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new BackyBack\CookieMeetBundle\BackyBackCookieMeetBundle(),
