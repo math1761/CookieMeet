@@ -14,15 +14,13 @@ class MapAPITest extends WebTestCase
     {
         $client = static::createClient();
 
-        $crawler = $client->request('GET', '/post/hello-world');
-        $this->crawler->request(
-            'POST',
-            '/api/map.json',
-            array(),
-            array(),
-            array('CONTENT_TYPE' => 'application/json'),
-            '{"title":"title1","body":"body1"}'
+        $client->request("GET", "/api/map/dd.json");
+
+        $this->assertTrue(
+            $client->getResponse()->headers->contains(
+                'Content-Type',
+                'application/json'
+            )
         );
-        $this->assertJsonResponse($this->client->getResponse(), 201, false);
     }
 }

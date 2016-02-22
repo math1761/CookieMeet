@@ -11,12 +11,12 @@ namespace BackyBack\CookieMeetBundle\Controller;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 use Doctrine\Tests\Common\DataFixtures\TestEntity\User;
 use FOS\RestBundle\Controller\Annotations\View;
-use FOS\RestBundle\Response;
 use Hoa\Websocket\Server as Serve;
 use Hoa\Socket\Server as Socket;
 use Hoa\Event\Bucket as Bucket;
 use Hoa\Event\Source as Source;
 use FOS\RestBundle\Controller\FOSRestController;
+use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
@@ -44,17 +44,21 @@ class MessengerController extends FOSRestController
      */
     public function getMessengerAction()
     {
-        $currentUser = $this->getCurrentUserAction();
-        return $this->render("BackyBackCookieMeetBundle:Messenger:messenger.html.twig",array('currentUser' => $currentUser));
-    }
+        $currentUser = $this->getUser();
 
-    /**
-     * @View()
-     * @ParamConverter("user", class="BackyBackCookieMeetBundle:User")
-     */
-    private function getCurrentUserAction()
-    {
-        $user = $this->getUser();
+        $response = new Response();
+        $response->setContent(json_encode(array(
+                'messenger' => array(
+                    'currentUser' => $currentUser,
+                    'contact' => 'John Doe',
+                    'message' => array(
+                        'sent' => '123',
+                        'received' => '456'),
+                ))
+        ));
+        $response->headers->set('Content-Type', 'application/json');
+
+        return $response;
     }
 
     /**
@@ -63,21 +67,11 @@ class MessengerController extends FOSRestController
      */
     private function getUsersToJSONAction(Request $request)
     {
-        $currentUser = $this->getCurrentUserAction();
         $user = $this->getDoctrine()->getRepository('BackyBackCookieMeetBundle:User');
         $request = $this->post('/api/messenger', [
             'users' => json_encode($user)
         ]);
         return $request;
-    }
-
-    /**
-     * @Route("/api/messenger")
-     * @Method("GET")
-     */
-    private function getUsersToMessageAction(Request $request)
-    {
-        $user = $this->getUsersToJSONAction($request);
     }
 
     /**
