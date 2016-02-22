@@ -10,6 +10,11 @@ namespace BackyBack\CookieMeetBundle\Controller;
 
 use FOS\RestBundle\Controller\FOSRestController;
 use Guzzle\Http\Message\Request;
+<<<<<<< Updated upstream
+=======
+use Hoa\Websocket\Server;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+>>>>>>> Stashed changes
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 use Doctrine\Tests\Common\DataFixtures\TestEntity\User;
 use FOS\RestBundle\Controller\Annotations\View;
@@ -88,14 +93,21 @@ class MessengerController extends FOSRestController
      */
     private function createServerAction()
     {
-        $server = new Serve(
+        $server = new Server(
             new Socket('tcp://127.0.0.1:8889')
         );
+        /*
         $server->on('message', function (Bucket $bucket) {
             $data = $bucket->getData();
 
             echo 'message: ', $data['message'], "\n";
             $bucket->getSource()->send($data['message']);
+        });
+        */
+        $server->on('message', function (Bucket $bucket) {
+            $bucket->getSource()->send('Hey tu es dispo quand pour une pizza ? :)');
+
+            return;
         });
         $server->run();
     }
@@ -120,6 +132,23 @@ class MessengerController extends FOSRestController
     private function getMessagefromJSONAction(Request $request)
     {
         $response = $this->postMessagetoJSONAction($request);
+
+        $client = new Websocket(
+            new Socket('tcp://127.0.0.1:8889')
+        );
+        $client->receive();
+        $client->on('message', function (Event $bucket) {
+            $data = $bucket->getData();
+            echo 'received message: ', $data['message'], "\n";
+
+            return;
+        });
+
+
+        //pas sur que le request en param soit utile
+        //retranscrire le json obtenu au dessus en affichage
+        //pas de return vu que le get en fait un tout seul
+
     }
 
 }
