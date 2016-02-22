@@ -4,14 +4,18 @@ namespace BackyBack\CookieMeetBundle\Tests\Controller;
 
 use FOS\RestBundle\FOSRestBundle;
 use FOS\RestBundle\Request;
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;;
+use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Intl\Tests\Data\Provider\Json;
 
 class MapAPITest extends WebTestCase
 {
-    public function testJsonPostPageAction()
+    public function testisJsonCreated()
     {
-        $this->client = static::createClient();
-        $this->client->request(
+        $client = static::createClient();
+
+        $crawler = $client->request('GET', '/post/hello-world');
+        $this->crawler->request(
             'POST',
             '/api/map.json',
             array(),

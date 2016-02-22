@@ -8,6 +8,7 @@ use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\Request;
+use FOS\RestBundle\Request as FOSRequest;
 use Ivory\GoogleMap\Helper\MapHelper;
 use Ivory\GoogleMap\MapTypeId;
 use FOS\RestBundle\View\View;
