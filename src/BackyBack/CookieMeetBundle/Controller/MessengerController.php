@@ -8,21 +8,15 @@
 
 namespace BackyBack\CookieMeetBundle\Controller;
 
-use FOS\RestBundle\Controller\FOSRestController;
-use Guzzle\Http\Message\Request;
-<<<<<<< Updated upstream
-=======
-use Hoa\Websocket\Server;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
->>>>>>> Stashed changes
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 use Doctrine\Tests\Common\DataFixtures\TestEntity\User;
 use FOS\RestBundle\Controller\Annotations\View;
-use Guzzle\Http\Message\Response;
+use FOS\RestBundle\Response;
 use Hoa\Websocket\Server as Serve;
 use Hoa\Socket\Server as Socket;
 use Hoa\Event\Bucket as Bucket;
 use Hoa\Event\Source as Source;
+use FOS\RestBundle\Controller\FOSRestController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
