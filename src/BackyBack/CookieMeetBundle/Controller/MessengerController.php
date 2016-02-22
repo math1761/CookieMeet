@@ -52,8 +52,7 @@ class MessengerController extends FOSRestController
                     'currentUser' => $currentUser,
                     'contact' => 'John Doe',
                     'message' => array(
-                        'sent' => '123',
-                        'received' => '456'),
+                        'message' => 'coucou'),
                 ))
         ));
         $response->headers->set('Content-Type', 'application/json');
