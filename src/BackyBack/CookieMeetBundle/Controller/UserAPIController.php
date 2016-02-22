@@ -3,48 +3,45 @@
 namespace BackyBack\CookieMeetBundle\Controller;
 
 use FOS\RestBundle\Controller\FOSRestController;
-use FOS\RestBundle\Controller\Annotations\RequestParam;
-use FOS\RestBundle\View\View;
 use FOS\RestBundle\Request\ParamFetcher;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
-use Symfony\Component\Validator\ConstraintViolationList;
+use Symfony\Component\HttpFoundation\Response;
 
 class UserAPIController extends FOSRestController
 {
-    /*public function listUsersAction()
-    {
-       $userManager = $this->get('fos_user.user_manager');
-        $users = $userManager->findUsers();
-
-        var_dump($users);
-        return $users;
-    }
-
-    private function getCurrentUser()
-    {
-        $user = $this->getUser();
-        var_dump($user);
-    }*/
-
     /**
-     * Return the overall user list.
+     * Return the overall user informations.
      *
      * @ApiDoc(
      *   resource = true,
-     *   description = "Return the overall User List",
+     *   description = "Return the overall User Informations",
      *   statusCodes = {
      *     200 = "Returned when successful",
-     *     404 = "Returned when the user is not found"
+     *     404 = "Returned when one of the information is not found"
      *   }
      * )
      *
      */
-    public function getUsersAction()
+    public function getUserAction()
     {
-        $userManager = $this->container->get('fos_user.user_manager');
-        $entity = $userManager->findUsers();
-        if (!$entity) {
-            throw $this->createNotFoundException('Data not found.');
-        }
+        $currentUser = $this->getUser();
+
+        $recepee = $this->getDoctrine()
+            ->getRepository("BackyBackCookieMeetBundle:AddRecepee")
+            ->findAll();
+
+        $response = new Response();
+        $response->setContent(json_encode(array(
+            'user' => array(
+                'currentUser' => $currentUser,
+                'coordonates' => array(
+                    'lat' => '123',
+                    'long' => '456'),
+                'recepee' => $recepee
+                ))
+        ));
+        $response->headers->set('Content-Type', 'application/json');
+
+        return $response;
     }
 }
