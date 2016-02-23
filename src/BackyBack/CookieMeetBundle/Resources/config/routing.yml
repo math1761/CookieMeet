@@ -24,3 +24,8 @@ backy_back_cookie_meet_user:
     type: rest
     prefix: /api
     resource: BackyBack\CookieMeetBundle\Controller\UserAPIController
+
+backy_back_cookie_meet_recepee_api:
+    type: rest
+    prefix: /api
+    resource: BackyBack\CookieMeetBundle\Controller\RecepeeAPIController

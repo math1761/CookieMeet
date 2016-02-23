@@ -122,4 +122,4 @@ ivory_google_map:
             locale: "fr"
 
         # Adapter class
-        adapter: "Geocoder\HttpAdapter\BuzzHttpAdapter"
+        #adapter: "Geocoder\HttpAdapter\BuzzHttpAdapter"

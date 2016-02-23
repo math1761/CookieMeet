@@ -8,7 +8,12 @@ use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use BackyBack\CookieMeetBundle\Controller\UserAPIController;
 use FOS\RestBundle\View\View;
+use Ivory\GoogleMap\Services\Geocoding\Result\GeocoderResult;
+use Ivory\GoogleMap\Services\Geocoding\Result\GeocoderStatus;
+use Ivory\GoogleMap\Services\Geocoding\GeocoderRequest as MapRequest;
+use Ivory\GoogleMap\Services\Geocoding\Result\GeocoderGeometry;
 
 class MapController extends FOSRestController
 {
@@ -26,60 +31,45 @@ class MapController extends FOSRestController
      */
     public function geocodeAction(Request $request)
     {
-        $curl     = new \Ivory\HttpAdapter\CurlHttpAdapter();
-        $geocoder = new \Geocoder\Provider\GoogleMaps($curl);
+        $utf = new UserAPIController();
+        $geocoder = $this->get('ivory_google_map.geocoder');
+        $response = $geocoder->geocode('73 Boulevard Berthier, Paris');
+        $map = $this->get('ivory_google_map.map');
+        $address = $this->parseUsersAddressAction();
 
-        $geocoder->geocode('73 Boulevard Berthier');
+        foreach($response->getResults() as $result)
+        {
+            // Request the google map merker service
+            $marker = $this->get('ivory_google_map.marker');
+
+            // Position the marker
+            $marker->setPosition($result->getGeometry()->getLocation());
+
+            // Add the marker to the map
+            $map->addMarker($marker);
+        }
+
+        $data = $utf->utf8ize(array(
+            'coordonnees' => $address,
+            'maps' => var_dump($result)
+        ));
+
 
         $response = new Response();
         $response->headers->set('Content-Type', 'application/json');
 
-        return $response->setContent(json_encode(array(
-            'coordonnees' => $geocoder
-        )));
+        return $response->setContent(json_encode($data));
     }
 
-    /*public function configMapAction()
+    private function parseUsersAddressAction()
     {
-        $map = new Map();
+        $address = $this->getDoctrine()
+            ->getRepository('BackyBackCookieMeetBundle:User')
+            ->find('address');
 
-        $marker = $this->markerConfigAction($map);
-        $map->addMarker($marker);
-        $map->setPrefixJavascriptVariable('map_');
-        $map->setHtmlContainerId('map_canvas');
+        $response = new Response();
+        $response->headers->set('Content-Type', 'application/json');
 
-        $map->setCenter(48.856614, 2.352222, true);
-
-        $map->setMapOption('zoom', 12);
-        $map->setMapOption('mapTypeId', MapTypeId::ROADMAP);
-        $map->setMapOption('mapTypeId', 'roadmap');
-        $map->setMapOption('disableDoubleClickZoom', false);
-        $map->setMapOptions(array(
-            'disableDefaultUI'       => false,
-            'disableDoubleClickZoom' => false,
-        ));
-        $map->setStylesheetOptions(array(
-            'width'  => '600px',
-            'height' => '600px',
-        ));
-        $map->addMarker($marker);
-
-        $map->setLanguage('fr');
-
-        return $map;
-    }*/
-
-    /*public function addMarkerAction($marker)
-    {
-        $marker = new Marker();
-
-        foreach($response->getResults() as $result) {
-            $marker->setAnimation(Animation::DROP);
-            $marker->setOptions(array(
-                'clickable' => true,
-                'flat' => true,
-            ));
-        }
-        return $marker;
-    }*/
+        return $response->setContent(json_encode($address));
+    }
 }

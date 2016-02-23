@@ -19,7 +19,6 @@ class AppKernel extends Kernel
             new FOS\RestBundle\FOSRestBundle(),
             new Nelmio\ApiDocBundle\NelmioApiDocBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
-            new JeroenDesloovere\Bundle\GeolocationBundle\JeroenDesloovereGeolocationBundle(),
             new Genemu\Bundle\FormBundle\GenemuFormBundle(),
             new Ivory\GoogleMapBundle\IvoryGoogleMapBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
