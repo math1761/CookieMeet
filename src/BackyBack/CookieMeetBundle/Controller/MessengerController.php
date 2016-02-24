@@ -48,13 +48,12 @@ class MessengerController extends FOSRestController
     {
         $currentUser = $this->getUser();
 
+        var_dump($currentUser);
         $response = new Response();
         $response->setContent(json_encode(array(
                 'messenger' => array(
                     'currentUser' => $currentUser,
-                    'contact' => 'John Doe',
-                    'message' => array(
-                        'message' => 'coucou'),
+                    'contact' => 'John Doe'
                 ))
         ));
         $response->headers->set('Content-Type', 'application/json');
@@ -89,14 +88,21 @@ class MessengerController extends FOSRestController
     }
 
     /**
-     * Get previous message sent into JSON
+     * Prepare message sending
      */
-    private function sendMessage(Request $request)
+    private function sendToClosestUserAction()
     {
-        $co = $this->createServerAction();
-        $co->serve;
+        $serve = $this->createServerAction();
+        $serve->on('message', function (Bucket $bucket) {
+            $data = $bucket->getData();
 
-        return $request;
+            echo 'message: ', $data['message'], "\n";
+            $bucket->getSource()->send($data['message']);
+
+            return;
+        });
+
+        $serve->run();
     }
 
 }
