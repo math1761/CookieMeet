@@ -62,10 +62,18 @@ class MessengerController extends FOSRestController
         return $response;
     }
 
+    /**
+     *
+     */
     private function getContact()
     {
         $contact = new UserAPIController();
     }
+
+    /**
+     * @param Request $request
+     * @return Request
+     */
     private function getUsersToJSONAction(Request $request)
     {
         $user = $this->getDoctrine()->getRepository('BackyBackCookieMeetBundle:User');
@@ -76,7 +84,6 @@ class MessengerController extends FOSRestController
     }
 
     /**
-     * @param Request $request
      * @return Request
      * Create a server and allows users to communicate
      */
@@ -90,6 +97,7 @@ class MessengerController extends FOSRestController
 
     /**
      * Get previous message sent into JSON
+     *
      */
     private function sendMessage(Request $request)
     {
@@ -98,5 +106,25 @@ class MessengerController extends FOSRestController
 
         return $request;
     }
+
+    /**
+     * Preparation before sending the message
+     */
+
+    private function sendToClosestUserAction()
+    {
+        $serve = $this->createServerAction();
+        $serve->on('message', function (Bucket $bucket) {
+            $data = $bucket->getData();
+
+            echo 'message: ', $data['message'], "\n";
+            $bucket->getSource()->send($data['message']);
+
+            return;
+        });
+
+        $serve->run();
+    }
+
 
 }
