@@ -24,26 +24,21 @@ class UserAPIController extends FOSRestController
      * )
      *
      */
-    public function getUserAction(Request $request)
+    public function getUserAction()
     {
-        $currentUser = $this->getUser();
-        $address = new MapController();
-        $serializer = $this->get('jms_serializer');
+        $user = $this->getUser();
 
-        $recepee = $this->getDoctrine()
-            ->getRepository("BackyBackCookieMeetBundle:AddRecepee")
-            ->findAll();
+        $address = new MapController();
 
         $data = $this->utf8ize(array(
                 'user' => array(
-                    'currentUser' => $currentUser,
-                    'coordonates' => 'test'
+                    'currentUser' => $user,
+                    'coordonates' => $address
                 ))
         );
-        $response = new Response();
 
-        var_dump($address->rangeCalculusAction());
-        return $response->setContent($serializer->serialize($data, 'json'));
+        $view = $this->view($data);
+        return $this->handleView($view);
     }
 
     /**
