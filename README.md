@@ -4,30 +4,23 @@ Cookie Meet is an API which can calculate the distance between multiples adresse
 To sum it simply, the goal of Cookie Meet would be to become a service between people who want to order food and people who want to sell their foods.
 
 # Usage
+
 ## How to install composer
 
-blablabla
+> Open your terminal
+> navigate into the SymfoHetic folder
+> type php composer-setup.php --install-dir=bin
+> then type composer update
 
 ## Check requirements
 
-A short description of the motivation behind the creation and maintenance of the project. This should explain **why** the project exists.
+Before using our API, you will need to verify that composer and php =< 5.6 are installed.
 
 ## Start the symfony server
 
-Provide code examples and explanations of how to get the project.
+It's simple, just verify that you are into the symfoHetic folder, that Apache and MySQL are running and then type :
+> php app/console server:run
 
-## Go to
+## Watch it on your web browser
 
-Depending on the size of the project, if it is small and simple enough the reference docs can be added to the README. For medium size to larger projects it is important to at least provide a link to where the API reference docs live.
-
-## Tests
-
-Describe and show how to run the tests with code examples.
-
-## Contributors
-
-Let people know how they can dive into the project, include important links to things like issue trackers, irc, twitter accounts if applicable.
-
-## License
-
-A short snippet describing the license (MIT, Apache, etc.)
+Once you started the symfony server, and do see the confirmation message on your terminal, just navigate to http://127.0.0.1:8000
