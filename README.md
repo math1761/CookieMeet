@@ -25,18 +25,3 @@ It's simple, just verify that you are into the symfoHetic folder, that Apache an
 
 Once you started the symfony server, and do see the confirmation message on your terminal, just navigate to http://127.0.0.1:8000
 
-
-- OAuth2 connexion :
-Create a new client : php app/console backy:oauth-server:client:create --redirect-uri="127.0.0.1:8000" --grant-type="authorization_code" --grant-type="password" --grant-type="refresh_token" --grant-type="token" --grant-type="client_credentials"
-It generates a client ID and a secret ID to be entered on Postman
-
-In Postman :
-- Access Token URL : http://127.0.0.1:8000/oauth/v2/token
-Don't forget, you have to request Client Credentials !
-When you have your token, enter the desired url (e.g. http://127.0.0.1:8000/api/geocode.json)
-And add the token obtained before !
-Now you can log in and do whatever you want !
-
-"Don't forget to generate fixtures with Alice Bundle : php app/console hautelook_alice:fixtures:load
-Thanks and I hope you'll enjoy our API !
-
