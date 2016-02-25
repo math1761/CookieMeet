@@ -41,27 +41,18 @@ class MapController extends FOSRestController
     public function geocodeAction()
     {
         $utf = new UserAPIController();
-        $geocoder = $this->get('ivory_google_map.geocoder');
-        $response = $geocoder->geocode('73 Boulevard Berthier, Paris');
-        $results = $response->getResults();
         $range = $this->rangeCalculusAction();
-        $serializer = $this->get('jms_serializer');
+        $address = $this->parseUserAddress();
 
-        foreach($results as $result)
-        {
-            $location = $result->getGeometry()->getLocation('latitude', 'longitude', true);
-        }
+        var_dump($address);
 
         $data = $utf->utf8ize(array(
-            'coordonnees' => array($location),
-            'distance' => array($range)
+            'distance' => $range
+            //'address' => $address
         ));
 
-
-        $response = new Response();
-        $response->headers->set('Content-Type', 'application/json');
-
-        return $response->setContent($serializer->serialize($data, 'json'));
+        $view = $this->view($data);
+        return $this->handleView($view);
     }
 
     /*private function parseUsersAddressAction()
@@ -72,16 +63,40 @@ class MapController extends FOSRestController
         return $response->setContent(json_encode($address));
     }*/
 
-    public function rangeCalculusAction()
+    private function rangeCalculusAction()
     {
         $distanceMatrix = new DistanceMatrix(new CurlHttpAdapter());
 
-        $elements = $distanceMatrix->process(array('15 rue Marceau, Paris, France'), array('73 Boulevard Berthier, France'));
+        $elements = $distanceMatrix->process(array('15 rue Marceau, Paris, France'), array('108 rue Saint-Lazare, Paris'));
 
         foreach ($elements as $element) {
             $distance = $element->getDistance();
         }
 
-        return $distance;
+        return $elements;
     }
+
+    private function getCoordonates()
+    {
+        $geocoder = $this->get('ivory_google_map.geocoder');
+        $response = $geocoder->geocode('73 Boulevard Berthier, Paris');
+        $results = $response->getResults();
+        foreach($results as $result)
+        {
+            $location = $result->getGeometry()->getLocation('latitude', 'longitude', true);
+        }
+
+        return $location;
+    }
+
+    public function parseUserAddress()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $query = $em->createQuery('SELECT address FROM BackyBackCookieMeetBundle:User');
+
+        $product = $query->getResult();
+
+        return $product;
+    }
+
 }

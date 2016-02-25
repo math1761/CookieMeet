@@ -62,11 +62,26 @@ swiftmailer:
 
 fos_user:
     db_driver: orm
-    firewall_name: main
+    firewall_name: secure_area
     user_class: BackyBack\CookieMeetBundle\Entity\User
     registration:
             form:
                 type: BackyBack\CookieMeetBundle\Form\RegistrationType
+
+fos_oauth_server:
+    db_driver:           orm
+    client_class:        BackyBack\CookieMeetBundle\Entity\Client
+    access_token_class:  BackyBack\CookieMeetBundle\Entity\AccessToken
+    refresh_token_class: BackyBack\CookieMeetBundle\Entity\RefreshToken
+    auth_code_class:     BackyBack\CookieMeetBundle\Entity\AuthCode
+    #user_class: BackyBack\CookieMeetBundle\Entity\User
+    #registration:
+      #form:
+        #type: BackyBack\CookieMeetBundle\Form\RegistrationType
+    service:
+        user_provider: fos_user.user_manager             # This property will be used when valid credentials are given to load the user upon access token creation
+        options:
+          supported_scopes: user
 
 nelmio_api_doc: ~
 
@@ -87,7 +102,7 @@ fos_rest:
     format_listener:
         enabled: true
         rules:
-            - { path: '^/api/', priorities: ['json'], fallback_format: 'html' }
+            - { path: '^/', priorities: ['json'], fallback_format: 'html' }
     versioning: true
     view:
         view_response_listener: 'force'
