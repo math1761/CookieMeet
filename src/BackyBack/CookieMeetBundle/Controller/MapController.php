@@ -42,9 +42,9 @@ class MapController extends FOSRestController
     {
         $utf = new UserAPIController();
         $range = $this->rangeCalculusAction();
-        $address = $this->parseUserAddress();
+        //$address = $this->parseUserAddress();
 
-        var_dump($address);
+        //var_dump($address);
 
         $data = $utf->utf8ize(array(
             'distance' => $range
@@ -55,27 +55,31 @@ class MapController extends FOSRestController
         return $this->handleView($view);
     }
 
-    /*private function parseUsersAddressAction()
-    {
-        $response = new Response();
-        $response->headers->set('Content-Type', 'application/json');
-
-        return $response->setContent(json_encode($address));
-    }*/
-
+    /**
+     * @return \Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixResponse
+     * @throws \Ivory\GoogleMap\Exception\DistanceMatrixException
+     *
+     * Description : calculate distance between to points
+     */
     private function rangeCalculusAction()
     {
         $distanceMatrix = new DistanceMatrix(new CurlHttpAdapter());
 
-        $elements = $distanceMatrix->process(array('15 rue Marceau, Paris, France'), array('108 rue Saint-Lazare, Paris'));
+        $bigdatas = $distanceMatrix->process(array('15 rue Marceau, Paris, France'), array('108 rue Saint-Lazare, Paris'));
+        $maison = $distanceMatrix->process(array('15 rue Marceau, Paris, France'), array('73 Boulevard Berthier, Paris'));
 
-        foreach ($elements as $element) {
-            $distance = $element->getDistance();
+        foreach ($bigdatas as $bigdata) {
+            $distance = $bigdata->getDistance();
         }
 
-        return $elements;
+        return array($bigdatas, $maison);
     }
 
+    /**
+     * @return mixed
+     *
+     * Description: Get coordonnates to
+     */
     private function getCoordonates()
     {
         $geocoder = $this->get('ivory_google_map.geocoder');
@@ -89,6 +93,10 @@ class MapController extends FOSRestController
         return $location;
     }
 
+    /**
+     * @return mixed
+     * Description : SQL Request to get only address informations of the user
+     */
     public function parseUserAddress()
     {
         $em = $this->getDoctrine()->getManager();

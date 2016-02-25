@@ -26,3 +26,12 @@ BackyBack\CookieMeetBundle\Entity\User:
       enabled: true
       plainPassword: root
       roles: [ROLE_USER]
+    user4:
+      username: math1995
+      email: kikoo@gmail.com
+      address: 27 rue du Progrès, Montreuil
+      firstname: Math
+      name: Doe
+      enabled: true
+      plainPassword: root
+      roles: [ROLE_USER]

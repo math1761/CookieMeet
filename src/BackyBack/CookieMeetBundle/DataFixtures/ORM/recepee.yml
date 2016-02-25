@@ -1,0 +1,21 @@
+BackyBack\CookieMeetBundle\Entity\AddRecepee:
+  recepee1:
+    plateName: Sushi
+    plateCategory: Japonais
+    platePrice: 4
+    plateExcerpt: Au saumon seulement
+  recepee2:
+    plateName: Pizza Marguarita
+    plateCategory: Pizza
+    platePrice: 2
+    plateExcerpt: Plein de fromage !
+  recepee3:
+    plateName: Paella
+    plateCategory: Espagnol
+    platePrice: 3
+    plateExcerpt: Attention beaucoup de crustacés !
+  recepee4:
+    plateName: Nem
+    plateCategory: Chinois
+    platePrice: 1
+    plateExcerpt: Nems au poulet
