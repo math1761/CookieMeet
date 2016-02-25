@@ -7,10 +7,10 @@ To sum it simply, the goal of Cookie Meet would be to become a service between p
 
 ## How to install composer
 
-> Open your terminal
-> navigate into the SymfoHetic folder
-> type php composer-setup.php --install-dir=bin
-> then type composer update
+Open your terminal
+1. navigate into the SymfoHetic folder
+2. type php composer-setup.php --install-dir=bin
+3. then type composer update
 
 ## Check requirements
 
@@ -24,3 +24,22 @@ It's simple, just verify that you are into the symfoHetic folder, that Apache an
 ## Watch it on your web browser
 
 Once you started the symfony server, and do see the confirmation message on your terminal, just navigate to http://127.0.0.1:8000
+
+##OAuth2 connection
+
+Create a new client : php app/console backy:oauth-server:client:create --redirect-uri="127.0.0.1:8000" --grant-type="authorization_code" --grant-type="password" --grant-type="refresh_token" --grant-type="token" --grant-type="client_credentials"
+It generates a client ID and a secret ID to be entered on Postman
+
+##In Postman
+
+ Authorization URL : http://127.0.0.1:8000/oauth/v2/auth
+ Access Token URL : http://127.0.0.1:8000/oauth/v2/token
+
+ Don't forget, you have to request Client Credentials !
+ When you have your token, enter the desired url (e.g. http://127.0.0.1:8000/api/geocode.json)
+ And add the token obtained before !
+
+ Now you can log in and do whatever you want !
+
+ #License
+ MIT
