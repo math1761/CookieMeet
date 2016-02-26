@@ -12,12 +12,6 @@ use BackyBack\CookieMeetBundle\Controller\UserAPIController;
 use FOS\RestBundle\View\View;
 use FOS\RestBundle\View\ViewHandler;
 use JMS\Serializer\SerializationContext;
-use Ivory\GoogleMap\Services\Geocoding\Result\GeocoderResult;
-use Ivory\GoogleMap\Services\Geocoding\Result\GeocoderStatus;
-use Ivory\GoogleMap\Services\Geocoding\GeocoderRequest as MapRequest;
-use Ivory\GoogleMap\Services\Geocoding\Result\GeocoderGeometry;
-use Ivory\GoogleMap\Services\Geocoding\GeocoderProvider;
-use Ivory\GoogleMap\Exception\GeocodingException;
 use Doctrine\ORM\EntityRepository;
 use Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrix;
 use Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixResponseElement;
@@ -36,26 +30,29 @@ class MapController extends FOSRestController
      *
      * @ApiDoc(
      *   resource = true,
-     *   description = "Return the User's address List",
+     *   description = "Geocode",
      *   statusCodes = {
-     *     200 = "Returned when successful",
+     *     200 = "Returned when the successful",
      *     404 = "Returned when the user's address is not found"
      *   }
+     *   This class gives you all the informations to calculate range between users,
+     *   coordonates and recepee access example
+     *
      * )
+     *
+     * View
      *
      */
     public function geocodeAction()
     {
         $utf = new UserAPIController();
-        $range = $this->rangeCalculus();
+        $range = $this->distanceCalculus();
         $recepee = $this->getUserRecepee();
         $address = $this->getCurrentUserAddress();
-        $destinations = $this->getContactAddress();
         $coordonates = $this->getCoordonates();
 
         $data = $utf->utf8ize(array(
             'currentAddress' => $address,
-            'destinations' => $destinations,
             'distance' => $range,
             'coordonates' => $coordonates,
             'recepee' => $recepee
@@ -78,26 +75,34 @@ class MapController extends FOSRestController
         $dest = $this->getContactAddress();
         $request = new DistanceMatrixRequest();
         $origin = array_map('current', $address);
-        $destinations = array_map('current', $dest);
 
-        foreach ($destinations as $destination)
-        {
-            $request->setOrigins($origin);
-            $request->setDestinations(array($destination));
-        }
-
-
-        /*$request2->setOrigins($origin);
-        $request->setDestinations(array('20 rue Marceau, Paris, France'));*/
+        $request->setOrigins($origin);
+        $request->setDestinations(array('20 rue Marceau, Paris, France'));
         $response = $distanceMatrix->process($request);
+        $status = $response->getStatus();
 
-        return array($response);
+        return $status;
+    }
+
+    /**
+     * @return float
+     *  Description : This function returns the distance between two points
+     *
+     */
+    private function distanceCalculus()
+    {
+        $status = $this->rangeCalculus();
+
+        $elements = new DistanceMatrixResponseElement($status);
+        $distance = $elements->getDistance()->getValue();
+
+        return $distance;
     }
 
     /**
      * @return mixed
      *
-     * Description: Get coordonnates to
+     * Description: Get coordonnates to add points in javascript on your map
      */
     private function getCoordonates()
     {
@@ -146,5 +151,4 @@ class MapController extends FOSRestController
 
         return $query;
     }
-
 }
