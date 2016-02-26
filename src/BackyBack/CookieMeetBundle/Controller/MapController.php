@@ -12,6 +12,12 @@ use BackyBack\CookieMeetBundle\Controller\UserAPIController;
 use FOS\RestBundle\View\View;
 use FOS\RestBundle\View\ViewHandler;
 use JMS\Serializer\SerializationContext;
+use Ivory\GoogleMap\Services\Geocoding\Result\GeocoderResult;
+use Ivory\GoogleMap\Services\Geocoding\Result\GeocoderStatus;
+use Ivory\GoogleMap\Services\Geocoding\GeocoderRequest as MapRequest;
+use Ivory\GoogleMap\Services\Geocoding\Result\GeocoderGeometry;
+use Ivory\GoogleMap\Services\Geocoding\GeocoderProvider;
+use Ivory\GoogleMap\Exception\GeocodingException;
 use Doctrine\ORM\EntityRepository;
 use Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrix;
 use Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixResponseElement;
@@ -30,23 +36,21 @@ class MapController extends FOSRestController
      *
      * @ApiDoc(
      *   resource = true,
-     *   description = "Geocode",
+     *   description = "This class gives you all the informations to calculate range between users,
+     *   coordonates and recepee access example",
      *   statusCodes = {
      *     200 = "Returned when the successful",
      *     404 = "Returned when the user's address is not found"
      *   }
-     *   This class gives you all the informations to calculate range between users,
-     *   coordonates and recepee access example
-     *
      * )
      *
-     * View
+     *
      *
      */
     public function geocodeAction()
     {
         $utf = new UserAPIController();
-        $range = $this->distanceCalculus();
+        $range = $this->rangeCalculus();
         $recepee = $this->getUserRecepee();
         $address = $this->getCurrentUserAddress();
         $coordonates = $this->getCoordonates();
@@ -81,15 +85,15 @@ class MapController extends FOSRestController
         $response = $distanceMatrix->process($request);
         $status = $response->getStatus();
 
-        return $status;
+        return $response;
     }
 
     /**
      * @return float
-     *  Description : This function returns the distance between two points
+     *  Description : When done, this function returns the distance between two points
      *
      */
-    private function distanceCalculus()
+    /*private function distanceCalculus()
     {
         $status = $this->rangeCalculus();
 
@@ -97,12 +101,12 @@ class MapController extends FOSRestController
         $distance = $elements->getDistance()->getValue();
 
         return $distance;
-    }
+    }*/
 
     /**
      * @return mixed
      *
-     * Description: Get coordonnates to add points in javascript on your map
+     * Description: Get coordonnates to
      */
     private function getCoordonates()
     {

@@ -21,6 +21,7 @@ class UserAPIController extends FOSRestController
      *     200 = "Returned when successful",
      *     404 = "Returned when one of the information is not found"
      *   }
+     *
      * )
      *
      */
