@@ -18,10 +18,16 @@ use Ivory\GoogleMap\Services\Geocoding\GeocoderRequest as MapRequest;
 use Ivory\GoogleMap\Services\Geocoding\Result\GeocoderGeometry;
 use Ivory\GoogleMap\Services\Geocoding\GeocoderProvider;
 use Ivory\GoogleMap\Exception\GeocodingException;
+use Doctrine\ORM\EntityRepository;
 use Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrix;
-use Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixElement;
-use Ivory\GoogleMap\Services\Base\Distance;
+use Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixResponseElement;
+use Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixStatus;
 use Widop\HttpAdapter\CurlHttpAdapter;
+use Ivory\GoogleMap\Base\Coordinate;
+use Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixResponseRow;
+use Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixRequest;
+use Ivory\GoogleMap\Services\Base\TravelMode;
+use Ivory\GoogleMap\Services\Base\UnitSystem;
 
 class MapController extends FOSRestController
 {
@@ -41,14 +47,18 @@ class MapController extends FOSRestController
     public function geocodeAction()
     {
         $utf = new UserAPIController();
-        $range = $this->rangeCalculusAction();
-        //$address = $this->parseUserAddress();
-
-        //var_dump($address);
+        $range = $this->rangeCalculus();
+        $recepee = $this->getUserRecepee();
+        $address = $this->getCurrentUserAddress();
+        $destinations = $this->getContactAddress();
+        $coordonates = $this->getCoordonates();
 
         $data = $utf->utf8ize(array(
-            'distance' => $range
-            //'address' => $address
+            'currentAddress' => $address,
+            'destinations' => $destinations,
+            'distance' => $range,
+            'coordonates' => $coordonates,
+            'recepee' => $recepee
         ));
 
         $view = $this->view($data);
@@ -61,18 +71,27 @@ class MapController extends FOSRestController
      *
      * Description : calculate distance between to points
      */
-    private function rangeCalculusAction()
+    private function rangeCalculus()
     {
         $distanceMatrix = new DistanceMatrix(new CurlHttpAdapter());
+        $address = $this->getCurrentUserAddress();
+        $dest = $this->getContactAddress();
+        $request = new DistanceMatrixRequest();
+        $origin = array_map('current', $address);
+        $destinations = array_map('current', $dest);
 
-        $bigdatas = $distanceMatrix->process(array('15 rue Marceau, Paris, France'), array('108 rue Saint-Lazare, Paris'));
-        $maison = $distanceMatrix->process(array('15 rue Marceau, Paris, France'), array('73 Boulevard Berthier, Paris'));
-
-        foreach ($bigdatas as $bigdata) {
-            $distance = $bigdata->getDistance();
+        foreach ($destinations as $destination)
+        {
+            $request->setOrigins($origin);
+            $request->setDestinations(array($destination));
         }
 
-        return array($bigdatas, $maison);
+
+        /*$request2->setOrigins($origin);
+        $request->setDestinations(array('20 rue Marceau, Paris, France'));*/
+        $response = $distanceMatrix->process($request);
+
+        return array($response);
     }
 
     /**
@@ -83,7 +102,7 @@ class MapController extends FOSRestController
     private function getCoordonates()
     {
         $geocoder = $this->get('ivory_google_map.geocoder');
-        $response = $geocoder->geocode('73 Boulevard Berthier, Paris');
+        $response = $geocoder->geocode('73 Boulevard Berthier');
         $results = $response->getResults();
         foreach($results as $result)
         {
@@ -97,14 +116,35 @@ class MapController extends FOSRestController
      * @return mixed
      * Description : SQL Request to get only address informations of the user
      */
-    public function parseUserAddress()
+    private function getUserRecepee()
     {
-        $em = $this->getDoctrine()->getManager();
-        $query = $em->createQuery('SELECT address FROM BackyBackCookieMeetBundle:User');
+        $recepee = $this->getDoctrine()->getManager();
+        $query = $recepee->createQuery(
+            'SELECT p FROM BackyBackCookieMeetBundle:AddRecepee p
+             WHERE p.platePrice >= :platePrice ORDER BY p.platePrice ASC')
+            ->setParameter('platePrice', '3')
+            ->getResult();
 
-        $product = $query->getResult();
+        return $query;
+    }
+    private function getCurrentUserAddress()
+    {
+        $user = $this->getDoctrine()->getManager();
+        $query = $user->createQuery(
+            "SELECT p.address FROM BackyBackCookieMeetBundle:User p WHERE p.address = '73 Boulevard Berthier, Paris'")
+            ->getResult();
 
-        return $product;
+        return $query;
+    }
+
+    private function getContactAddress()
+    {
+        $user = $this->getDoctrine()->getManager();
+        $query = $user->createQuery(
+            "SELECT p.address FROM BackyBackCookieMeetBundle:User p WHERE p.address != '73 Boulevard Berthier, Paris'")
+            ->getResult();
+
+        return $query;
     }
 
 }
