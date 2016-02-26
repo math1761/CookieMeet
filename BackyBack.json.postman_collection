@@ -1,0 +1,194 @@
+{
+	"id": "12d46693-2d8f-00dc-b647-5191613c323d",
+	"name": "BackyBack",
+	"description": "",
+	"order": [],
+	"folders": [
+		{
+			"id": "1ebcff9b-27dc-b471-d0b7-8a46ad16d24c",
+			"name": "Connection",
+			"description": "",
+			"order": [],
+			"owner": 0
+		},
+		{
+			"id": "aac2ef59-2606-5936-d545-4bcc0b86d873",
+			"name": "Enregistrement",
+			"description": "",
+			"order": [
+				"252dc71d-184c-5a9d-8425-f60644858139",
+				"3b7383be-9fff-a367-baab-58698678dbe7"
+			],
+			"owner": 0
+		},
+		{
+			"id": "12dc96e6-0c09-b0f8-69e4-b70c7517ac3e",
+			"name": "Geocoding",
+			"description": "",
+			"order": [
+				"a6e7635a-4364-0b84-2ede-1a8fb056e515"
+			],
+			"owner": 0
+		}
+	],
+	"timestamp": 1456183614885,
+	"owner": 0,
+	"remoteLink": "",
+	"public": false,
+	"requests": [
+		{
+			"id": "252dc71d-184c-5a9d-8425-f60644858139",
+			"url": "http://127.0.0.1:8000/register",
+			"method": "GET",
+			"headers": "Content-Type: application/json\n",
+			"data": [
+				{
+					"key": "username",
+					"value": "math1761",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "root",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": "",
+			"preRequestScript": "",
+			"currentHelper": "normal",
+			"pathVariables": {},
+			"version": 2,
+			"name": "http://127.0.0.1:8000/register",
+			"description": "",
+			"descriptionFormat": "html",
+			"collectionId": "12d46693-2d8f-00dc-b647-5191613c323d",
+			"folder": "aac2ef59-2606-5936-d545-4bcc0b86d873"
+		},
+		{
+			"id": "3b7383be-9fff-a367-baab-58698678dbe7",
+			"url": "http://127.0.0.1:8000/register",
+			"method": "POST",
+			"headers": "",
+			"data": [
+				{
+					"key": "fos_user_registration_form_email",
+					"value": "john@hetic.net",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "fos_user_registration_form_username",
+					"value": "Johny5",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "fos_user_registration_form_plainPassword_first",
+					"value": "root",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "fos_user_registration_form_plainPassword_second",
+					"value": "root",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "fos_user_registration_form_firstname",
+					"value": "John",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "fos_user_registration_form_name",
+					"value": "Doe",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "fos_user_registration_form_address",
+					"value": "15 Rue Saussier-Leroy, Paris",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": "",
+			"preRequestScript": "",
+			"currentHelper": "normal",
+			"pathVariables": {},
+			"version": 2,
+			"name": "http://127.0.0.1:8000/register",
+			"description": "",
+			"descriptionFormat": "html",
+			"collectionId": "12d46693-2d8f-00dc-b647-5191613c323d",
+			"folder": "aac2ef59-2606-5936-d545-4bcc0b86d873"
+		},
+		{
+			"id": "a6e7635a-4364-0b84-2ede-1a8fb056e515",
+			"url": "http://127.0.0.1:8000/api/geocode.json?access_token=NmRmNmY1NTljNTYxODE5YmRlOGM0ZDg1MjUzYjBkZGNkNTc5NTg1NzQ2OTg2ZmEyMjkzY2NiYjA1YTU2NzE0Nw",
+			"method": "GET",
+			"headers": "",
+			"data": [
+				{
+					"key": "fos_user_registration_form_email",
+					"value": "john@hetic.net",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "fos_user_registration_form_username",
+					"value": "Johny5",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "fos_user_registration_form_plainPassword_first",
+					"value": "root",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "fos_user_registration_form_plainPassword_second",
+					"value": "root",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "fos_user_registration_form_firstname",
+					"value": "John",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "fos_user_registration_form_name",
+					"value": "Doe",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "fos_user_registration_form_address",
+					"value": "15 Rue Saussier-Leroy, Paris",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": "",
+			"preRequestScript": "",
+			"currentHelper": "oAuth2",
+			"helperAttributes": "{\"id\":\"oAuth2\",\"authorization_url\":\"http://127.0.0.1:8000/oauth/v2/auth\",\"access_token_url\":\"http://127.0.0.1:8000/oauth/v2/token\",\"client_id\":\"14_usbcc0anznkw080ss0o4kk4c080cw4ooo0g84cokcwg44cscw\",\"client_secret\":\"52pv5baqbp0cckowgwgoo4w0sc4ooco0k04o8oscwcg8ww4ccc\",\"grant_type\":\"client_credentials\",\"scope\":\"\",\"timestamp\":1456368958835,\"time\":1456473357994,\"local_access_token\":true}",
+			"pathVariables": {},
+			"version": 2,
+			"name": "http://127.0.0.1:8000/api/geocode.json?access_token=NmRmNmY1NTljNTYxODE5YmRlOGM0ZDg1MjUzYjBkZGNkNTc5NTg1NzQ2OTg2ZmEyMjkzY2NiYjA1YTU2NzE0Nw",
+			"description": "",
+			"descriptionFormat": "html",
+			"collectionId": "12d46693-2d8f-00dc-b647-5191613c323d",
+			"folder": "12dc96e6-0c09-b0f8-69e4-b70c7517ac3e"
+		}
+	]
+}
