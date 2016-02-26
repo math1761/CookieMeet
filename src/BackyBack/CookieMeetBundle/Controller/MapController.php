@@ -5,29 +5,12 @@ namespace BackyBack\CookieMeetBundle\Controller;
 use Doctrine\ORM\EntityNotFoundException;
 use FOS\RestBundle\Controller\FOSRestController;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
-use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
-use BackyBack\CookieMeetBundle\Controller\UserAPIController;
 use FOS\RestBundle\View\View;
 use FOS\RestBundle\View\ViewHandler;
-use JMS\Serializer\SerializationContext;
-use Ivory\GoogleMap\Services\Geocoding\Result\GeocoderResult;
-use Ivory\GoogleMap\Services\Geocoding\Result\GeocoderStatus;
-use Ivory\GoogleMap\Services\Geocoding\GeocoderRequest as MapRequest;
-use Ivory\GoogleMap\Services\Geocoding\Result\GeocoderGeometry;
-use Ivory\GoogleMap\Services\Geocoding\GeocoderProvider;
-use Ivory\GoogleMap\Exception\GeocodingException;
 use Doctrine\ORM\EntityRepository;
 use Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrix;
-use Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixResponseElement;
-use Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixStatus;
 use Widop\HttpAdapter\CurlHttpAdapter;
-use Ivory\GoogleMap\Base\Coordinate;
-use Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixResponseRow;
 use Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixRequest;
-use Ivory\GoogleMap\Services\Base\TravelMode;
-use Ivory\GoogleMap\Services\Base\UnitSystem;
 
 class MapController extends FOSRestController
 {
@@ -83,7 +66,6 @@ class MapController extends FOSRestController
         $request->setOrigins($origin);
         $request->setDestinations(array('20 rue Marceau, Paris, France'));
         $response = $distanceMatrix->process($request);
-        $status = $response->getStatus();
 
         return $response;
     }
