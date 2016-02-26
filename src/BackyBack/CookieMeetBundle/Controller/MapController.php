@@ -18,10 +18,16 @@ use Ivory\GoogleMap\Services\Geocoding\GeocoderRequest as MapRequest;
 use Ivory\GoogleMap\Services\Geocoding\Result\GeocoderGeometry;
 use Ivory\GoogleMap\Services\Geocoding\GeocoderProvider;
 use Ivory\GoogleMap\Exception\GeocodingException;
+use Doctrine\ORM\EntityRepository;
 use Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrix;
-use Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixElement;
-use Ivory\GoogleMap\Services\Base\Distance;
+use Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixResponseElement;
+use Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixStatus;
 use Widop\HttpAdapter\CurlHttpAdapter;
+use Ivory\GoogleMap\Base\Coordinate;
+use Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixResponseRow;
+use Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixRequest;
+use Ivory\GoogleMap\Services\Base\TravelMode;
+use Ivory\GoogleMap\Services\Base\UnitSystem;
 
 class MapController extends FOSRestController
 {
@@ -41,47 +47,104 @@ class MapController extends FOSRestController
     public function geocodeAction()
     {
         $utf = new UserAPIController();
-        $geocoder = $this->get('ivory_google_map.geocoder');
-        $response = $geocoder->geocode('73 Boulevard Berthier, Paris');
-        $results = $response->getResults();
-        $range = $this->rangeCalculusAction();
-        $serializer = $this->get('jms_serializer');
+        $range = $this->rangeCalculus();
+        $recepee = $this->getUserRecepee();
+        $address = $this->getCurrentUserAddress();
+        $destinations = $this->getContactAddress();
+        $coordonates = $this->getCoordonates();
 
+        $data = $utf->utf8ize(array(
+            'currentAddress' => $address,
+            'destinations' => $destinations,
+            'distance' => $range,
+            'coordonates' => $coordonates,
+            'recepee' => $recepee
+        ));
+
+        $view = $this->view($data);
+        return $this->handleView($view);
+    }
+
+    /**
+     * @return \Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixResponse
+     * @throws \Ivory\GoogleMap\Exception\DistanceMatrixException
+     *
+     * Description : calculate distance between to points
+     */
+    private function rangeCalculus()
+    {
+        $distanceMatrix = new DistanceMatrix(new CurlHttpAdapter());
+        $address = $this->getCurrentUserAddress();
+        $dest = $this->getContactAddress();
+        $request = new DistanceMatrixRequest();
+        $origin = array_map('current', $address);
+        $destinations = array_map('current', $dest);
+
+        foreach ($destinations as $destination)
+        {
+            $request->setOrigins($origin);
+            $request->setDestinations(array($destination));
+        }
+
+
+        /*$request2->setOrigins($origin);
+        $request->setDestinations(array('20 rue Marceau, Paris, France'));*/
+        $response = $distanceMatrix->process($request);
+
+        return array($response);
+    }
+
+    /**
+     * @return mixed
+     *
+     * Description: Get coordonnates to
+     */
+    private function getCoordonates()
+    {
+        $geocoder = $this->get('ivory_google_map.geocoder');
+        $response = $geocoder->geocode('73 Boulevard Berthier');
+        $results = $response->getResults();
         foreach($results as $result)
         {
             $location = $result->getGeometry()->getLocation('latitude', 'longitude', true);
         }
 
-        $data = $utf->utf8ize(array(
-            'coordonnees' => array($location),
-            'distance' => array($range)
-        ));
-
-
-        $response = new Response();
-        $response->headers->set('Content-Type', 'application/json');
-
-        return $response->setContent($serializer->serialize($data, 'json'));
+        return $location;
     }
 
-    /*private function parseUsersAddressAction()
+    /**
+     * @return mixed
+     * Description : SQL Request to get only address informations of the user
+     */
+    private function getUserRecepee()
     {
-        $response = new Response();
-        $response->headers->set('Content-Type', 'application/json');
+        $recepee = $this->getDoctrine()->getManager();
+        $query = $recepee->createQuery(
+            'SELECT p FROM BackyBackCookieMeetBundle:AddRecepee p
+             WHERE p.platePrice >= :platePrice ORDER BY p.platePrice ASC')
+            ->setParameter('platePrice', '3')
+            ->getResult();
 
-        return $response->setContent(json_encode($address));
-    }*/
-
-    public function rangeCalculusAction()
-    {
-        $distanceMatrix = new DistanceMatrix(new CurlHttpAdapter());
-
-        $elements = $distanceMatrix->process(array('15 rue Marceau, Paris, France'), array('73 Boulevard Berthier, France'));
-
-        foreach ($elements as $element) {
-            $distance = $element->getDistance();
-        }
-
-        return $distance;
+        return $query;
     }
+    private function getCurrentUserAddress()
+    {
+        $user = $this->getDoctrine()->getManager();
+        $query = $user->createQuery(
+            "SELECT p.address FROM BackyBackCookieMeetBundle:User p WHERE p.address = '73 Boulevard Berthier, Paris'")
+            ->getResult();
+
+        return $query;
+    }
+
+    private function getContactAddress()
+    {
+        $user = $this->getDoctrine()->getManager();
+        $query = $user->createQuery(
+            "SELECT p.address FROM BackyBackCookieMeetBundle:User p WHERE p.address != '73 Boulevard Berthier, Paris'")
+            ->getResult();
+
+        return $query;
+    }
+
 }

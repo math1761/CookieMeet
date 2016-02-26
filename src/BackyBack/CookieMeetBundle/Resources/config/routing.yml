@@ -1,5 +1,5 @@
 backy_back_cookie_meet_home:
-    path:     /
+    path: /
     defaults: { _controller: BackyBackCookieMeetBundle:Home:getHome }
 
 backy_back_cookie_meet_recepee:
@@ -28,4 +28,4 @@ backy_back_cookie_meet_user:
 backy_back_cookie_meet_recepee_api:
     type: rest
     prefix: /api
-    resource: BackyBack\CookieMeetBundle\Controller\RecepeeAPIController
+    resource: BackyBack\CookieMeetBundle\Controller\UserAPIController

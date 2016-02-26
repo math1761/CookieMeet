@@ -7,7 +7,7 @@ use FOS\RestBundle\Request\ParamFetcher;
 use Symfony\Component\HttpFoundation\Request;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use JMS\Serializer\SerializationContext;
-use Symfony\Component\HttpFoundation\Response;
+use BackyBack\CookieMeetBundle\Controller\MapController;
 
 class UserAPIController extends FOSRestController
 {
@@ -24,26 +24,22 @@ class UserAPIController extends FOSRestController
      * )
      *
      */
-    public function getUserAction(Request $request)
+    public function getUserAction()
     {
-        $currentUser = $this->getUser();
+        $user = $this->getUser();
+
         $address = new MapController();
-        $serializer = $this->get('jms_serializer');
+        $location = $address->geocodeAction();
 
-        $recepee = $this->getDoctrine()
-            ->getRepository("BackyBackCookieMeetBundle:AddRecepee")
-            ->findAll();
-
+        var_dump($location);
         $data = $this->utf8ize(array(
                 'user' => array(
-                    'currentUser' => $currentUser,
-                    'coordonates' => 'test'
+                    'currentUser' => $user
                 ))
         );
-        $response = new Response();
 
-        var_dump($address->rangeCalculusAction());
-        return $response->setContent($serializer->serialize($data, 'json'));
+        $view = $this->view($data);
+        return $this->handleView($view);
     }
 
     /**
